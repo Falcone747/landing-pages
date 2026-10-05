@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>EXIOR — Réinventez l'entreprise. | 1 000 € HT</title>
-<meta name="description" content="L'analyse EXIOR montre ce que votre entreprise pourrait être construite pour produire aujourd'hui. Analyse complète, sur mesure, livrée en 3 semaines. 1 000 € HT." />
+<title>EXIOR — Réinventez l'entreprise. · 1 000 € HT</title>
+<meta name="description" content="L'analyse EXIOR compare votre entreprise à l'architecture qu'elle pourrait être construite pour produire aujourd'hui. Complète, sur mesure, livrée en 3 semaines. 1 000 € HT." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
 <style>
   :root {
@@ -16,22 +16,20 @@
     --bg-2: #0e0e0e;
     --surface: #131313;
     --surface-2: #1a1a1a;
-    --surface-3: #202020;
     --fg: #f5f5f0;
+    --fg-bright: #ffffff;
     --muted: rgba(245, 245, 240, 0.55);
-    --muted-2: rgba(245, 245, 240, 0.72);
+    --muted-2: rgba(245, 245, 240, 0.75);
     --line: rgba(255, 255, 255, 0.08);
     --line-2: rgba(255, 255, 255, 0.14);
-    --line-3: rgba(255, 255, 255, 0.22);
     --accent: #6b7cff;
-    --accent-soft: rgba(107, 124, 255, 0.12);
-    --accent-line: rgba(107, 124, 255, 0.3);
+    --accent-soft: rgba(107, 124, 255, 0.10);
 
-    --r-sm: 8px; --r-md: 12px; --r-lg: 18px; --r-pill: 8px;
-    --maxw: 1080px;
-    --font-body: "Inter", "Inter Placeholder", system-ui, sans-serif;
+    --r-sm: 6px; --r-md: 10px; --r-lg: 14px; --r-pill: 999px;
+    --maxw: 1180px;
+    --font-body: "Inter", system-ui, sans-serif;
+    --font-serif: "Fraunces", "Fraunces Placeholder", Georgia, serif;
     --font-mono: "JetBrains Mono", monospace;
-    --focus-ring: 0 0 0 2px var(--accent);
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -39,185 +37,171 @@
   body {
     margin: 0; background: var(--bg); color: var(--fg);
     font-family: var(--font-body); font-size: 16px; line-height: 1.6;
-    font-weight: 400; letter-spacing: -0.005em;
     -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
   img, svg { max-width: 100%; display: block; }
   a { color: inherit; text-decoration: none; }
   button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
-  .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
-  :focus-visible { outline: 0; box-shadow: var(--focus-ring); border-radius: 4px; }
+  .container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 32px; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 
-  .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(10, 10, 10, 0.75); border-bottom: 1px solid transparent; }
+  /* NAV — minimal */
+  .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(10, 10, 10, 0.7); border-bottom: 1px solid transparent; }
   .nav.scrolled { border-color: var(--line); }
-  .nav-inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
-  .logo { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; letter-spacing: 0.06em; text-transform: uppercase; }
-  .logo .mark { width: 16px; height: 16px; border: 1.5px solid var(--fg); transform: rotate(45deg); display: inline-block; }
-  .nav-links { display: flex; gap: 32px; font-size: 13px; color: var(--muted-2); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+  .logo { font-weight: 600; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; }
+  .logo .mark { display: inline-block; width: 14px; height: 14px; border: 1.5px solid var(--fg); transform: rotate(45deg); margin-right: 10px; vertical-align: -2px; }
+  .nav-links { display: flex; gap: 28px; font-size: 13px; color: var(--muted-2); }
   .nav-links a { transition: color 0.2s; }
-  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover { color: var(--fg); }
+  .nav-cta { font-size: 13px; color: var(--accent); }
   @media (max-width: 760px) { .nav-links { display: none; } }
 
-  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 20px; border-radius: var(--r-pill); font-weight: 500; font-size: 14px; line-height: 1; transition: opacity 0.2s, background 0.2s, border-color 0.2s, color 0.2s; white-space: nowrap; }
-  .btn-primary { background: var(--accent); color: #fff; font-weight: 500; }
+  /* BUTTONS */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 22px; border-radius: var(--r-pill); font-weight: 500; font-size: 14px; transition: background 0.2s, color 0.2s, border-color 0.2s; white-space: nowrap; }
+  .btn-primary { background: var(--accent); color: #fff; }
   .btn-primary:hover { background: #5a6bff; }
   .btn-ghost { background: transparent; color: var(--fg); border: 1px solid var(--line-2); }
-  .btn-ghost:hover { border-color: var(--line-3); }
+  .btn-ghost:hover { border-color: var(--fg); }
   .btn-lg { height: 52px; padding: 0 28px; font-size: 15px; }
 
-  section { padding: 96px 0; position: relative; }
-  @media (max-width: 760px) { section { padding: 64px 0; } }
-  h1, h2, h3 { font-weight: 700; letter-spacing: -0.03em; line-height: 1.08; margin: 0; color: var(--fg); }
-  h1 { font-size: clamp(40px, 6vw, 72px); font-weight: 700; }
-  h2 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 700; }
-  h3 { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+  /* TYPE — premium scale */
+  h1, h2, h3 { margin: 0; color: var(--fg-bright); font-weight: 600; letter-spacing: -0.03em; line-height: 1.05; }
+  .h-display { font-size: clamp(56px, 9vw, 128px); font-weight: 500; letter-spacing: -0.04em; line-height: 0.98; }
+  .h-1 { font-size: clamp(40px, 5.5vw, 72px); font-weight: 600; letter-spacing: -0.035em; line-height: 1.02; }
+  .h-2 { font-size: clamp(28px, 3.6vw, 44px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; }
+  .h-3 { font-size: 19px; font-weight: 600; letter-spacing: -0.01em; }
+  .serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
   p { margin: 0; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); font-family: var(--font-mono); font-weight: 500; }
-  .section-head { margin-bottom: 56px; max-width: 720px; }
-  .section-head.center { text-align: center; margin-left: auto; margin-right: auto; }
-  .section-head p { color: var(--muted-2); font-size: 16px; margin-top: 14px; max-width: 56ch; }
-  .section-head.center p { margin-left: auto; margin-right: auto; }
+  .lede { color: var(--muted-2); font-size: 18px; line-height: 1.55; }
+  .small { font-size: 13px; color: var(--muted); }
+  .mono { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.02em; }
+  .eyebrow { display: inline-block; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); font-weight: 500; }
 
-  /* HERO */
-  .hero { padding: 100px 0 80px; position: relative; overflow: hidden; }
-  .hero::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120%; height: 600px; background: radial-gradient(ellipse at 50% 0%, rgba(107, 124, 255, 0.07) 0%, transparent 60%); pointer-events: none; }
-  .hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 1fr; gap: 64px; align-items: center; }
-  @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; gap: 48px; } }
-  .hero-left { display: flex; flex-direction: column; gap: 28px; }
-  .hero h1 { max-width: 13ch; }
-  .hero-tag { color: var(--muted-2); font-size: 17px; line-height: 1.6; max-width: 50ch; }
-  .price-pill { display: inline-flex; align-items: baseline; gap: 10px; padding: 10px 16px; border: 1px solid var(--line); border-radius: var(--r-pill); background: var(--surface); width: fit-content; }
-  .price-pill .amt { font-family: var(--font-mono); font-weight: 600; font-size: 15px; color: var(--accent); }
-  .price-pill .lbl { font-size: 13px; color: var(--muted); }
-  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  section { padding: 120px 0; position: relative; }
+  @media (max-width: 760px) { section { padding: 72px 0; } }
 
-  /* MOCKUP */
-  .mockup { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
-  .mockup-titlebar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
-  .mockup-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line-2); }
-  .mockup-url { margin-left: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
-  .mockup-body { display: grid; grid-template-columns: 160px 1fr; }
-  .mockup-side { border-right: 1px solid var(--line); padding: 12px 8px; display: flex; flex-direction: column; gap: 2px; }
-  .mockup-side .item { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 4px; font-size: 11px; color: var(--muted); }
-  .mockup-side .item.active { background: var(--accent-soft); color: var(--accent); }
-  .mockup-side .item .ico { width: 10px; height: 10px; opacity: 0.5; flex: none; }
-  .mockup-side .item.active .ico { opacity: 1; }
-  .mockup-main { padding: 18px; display: flex; flex-direction: column; gap: 14px; }
-  .mockup-head { display: flex; align-items: center; justify-content: space-between; }
-  .mockup-h1 { font-size: 13px; font-weight: 500; }
-  .mockup-h1 .tag { font-family: var(--font-mono); font-size: 10px; color: var(--muted); margin-left: 8px; }
-  .mockup-status { font-family: var(--font-mono); font-size: 10px; padding: 3px 8px; border: 1px solid var(--accent-line); border-radius: 4px; color: var(--accent); }
-  .mockup-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
-  .mockup-kpi { background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 8px 10px; }
-  .mockup-kpi .k { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; }
-  .mockup-kpi .v { font-family: var(--font-mono); font-size: 13px; font-weight: 500; }
-  .mockup-kpi .v.accent { color: var(--accent); }
-  .mockup-table { border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
-  .mockup-table .row { display: grid; grid-template-columns: 1fr 0.7fr 0.7fr; gap: 8px; padding: 7px 10px; font-size: 11px; border-bottom: 1px solid var(--line); }
-  .mockup-table .row:last-child { border-bottom: 0; }
-  .mockup-table .row.head { color: var(--muted); font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em; }
-  .mockup-table .row .pill { font-family: var(--font-mono); font-size: 10px; padding: 1px 6px; border: 1px solid var(--line-2); border-radius: 3px; width: fit-content; color: var(--muted); }
-  .mockup-table .row .pill.ok { color: var(--accent); border-color: var(--accent-line); }
-  .mockup-chart { display: flex; align-items: flex-end; gap: 4px; height: 40px; padding: 8px 10px; background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; }
-  .mockup-chart .bar { flex: 1; background: var(--muted-2); border-radius: 1px; }
-  .mockup-chart .bar.accent { background: var(--accent); }
-  .mockup-foot { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 11px; color: var(--muted); }
-  .mockup-foot .rec { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-  .mockup-foot .prompt { flex: 1; font-family: var(--font-mono); font-size: 11px; }
+  /* ====================== HERO — product is the star ====================== */
+  .hero { padding: 80px 0 100px; }
+  .hero-top { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+  .hero-top .eyebrow { margin-bottom: 20px; }
+  .hero-top h1 { font-size: clamp(40px, 5.5vw, 64px); font-weight: 500; letter-spacing: -0.035em; line-height: 1.05; }
+  .hero-top h1 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .hero-top .sub { color: var(--muted-2); font-size: 17px; margin-top: 20px; max-width: 52ch; margin-left: auto; margin-right: auto; }
+  .hero-meta { display: flex; justify-content: center; gap: 32px; margin-top: 32px; flex-wrap: wrap; }
+  .hero-meta .item { font-size: 12px; color: var(--muted); font-family: var(--font-mono); letter-spacing: 0.04em; }
+  .hero-meta .item strong { color: var(--fg); font-weight: 500; }
 
-  /* METHOD */
-  .method { padding: 96px 0; border-top: 1px solid var(--line); }
-  .method-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
-  @media (max-width: 960px) { .method-grid { grid-template-columns: 1fr; } }
-  .project-card, .service-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s; }
-  .project-card:hover, .service-card:hover { border-color: var(--line-2); transform: translateY(-2px); }
-  .project-img, .service-img { background: var(--bg); overflow: hidden; }
-  .project-img { aspect-ratio: 4/3; }
-  .service-img { aspect-ratio: 1/1; }
-  .project-img img, .service-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .project-body, .service-body { padding: 28px 28px 24px; display: flex; flex-direction: column; gap: 10px; }
-  .project-num { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; }
-  .project-card h3, .service-card h3 { font-size: 19px; }
-  .project-card p, .service-card p { color: var(--muted-2); font-size: 14px; line-height: 1.6; }
-  .project-metrics { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; padding-top: 18px; border-top: 1px solid var(--line); }
-  .metric { background: var(--surface-2); border: 1px solid var(--line); border-radius: 6px; padding: 14px 12px; text-align: center; }
-  .metric-val { font-family: var(--font-mono); font-weight: 600; font-size: 22px; color: var(--accent); }
-  .metric-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; }
+  /* The product preview — large, full-width, the hero */
+  .product-stage { position: relative; max-width: 1040px; margin: 0 auto; }
+  .product-frame { position: relative; border-radius: var(--r-lg); overflow: hidden; background: #050505; border: 1px solid var(--line); }
+  .product-img-wrap { position: relative; aspect-ratio: 16/9; overflow: hidden; }
+  .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .product-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: space-between; padding: 24px; pointer-events: none; }
+  .product-overlay .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .product-overlay .bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+  .product-badge { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; background: rgba(10, 10, 10, 0.75); backdrop-filter: blur(10px); border: 1px solid var(--line-2); border-radius: var(--r-pill); font-family: var(--font-mono); font-size: 11px; color: var(--fg); }
+  .product-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+  .product-metric-float { padding: 12px 18px; background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(10px); border: 1px solid var(--line-2); border-radius: var(--r-md); }
+  .product-metric-float .label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; color: var(--muted); text-transform: uppercase; }
+  .product-metric-float .val { font-family: var(--font-mono); font-size: 22px; font-weight: 500; color: var(--fg-bright); margin-top: 4px; }
+  .product-metric-float .val em { font-style: normal; color: var(--accent); }
+  .product-caption { text-align: center; margin-top: 20px; font-size: 13px; color: var(--muted); }
 
-  /* PROOF */
-  .proof { padding: 80px 0; border-top: 1px solid var(--line); }
-  .proof-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: start; }
-  @media (max-width: 960px) { .proof-grid { grid-template-columns: 1fr; } }
-  .proof-list-head { padding: 14px 18px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; }
-  .proof-list-head h4 { font-size: 13px; font-weight: 500; }
-  .proof-list-head .count { font-family: var(--font-mono); font-size: 11px; color: var(--accent); }
-  .proof-items { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
-  .proof-items > div { background: var(--surface); padding: 16px 18px; }
-  .proof-items .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; margin-bottom: 4px; }
-  .proof-items h5 { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
-  .proof-items p { font-size: 11px; color: var(--muted-2); }
-  .proof-items > div.full { grid-column: 1 / -1; }
-  .proof-text { display: flex; flex-direction: column; gap: 20px; padding-top: 8px; }
-  .proof-text h3 { font-size: 22px; }
-  .proof-text p { color: var(--muted-2); font-size: 15px; line-height: 1.65; }
-  .proof-text ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
-  .proof-text li { font-size: 14px; color: var(--muted-2); padding-left: 18px; position: relative; line-height: 1.5; }
-  .proof-text li::before { content: "—"; position: absolute; left: 0; color: var(--muted); }
+  /* ====================== PROJECTS — the work is the proof ====================== */
+  .projects { padding: 120px 0; border-top: 1px solid var(--line); }
+  .projects-head { max-width: 720px; margin-bottom: 80px; }
+  .projects-head .eyebrow { margin-bottom: 20px; }
+  .projects-head h2 { max-width: 18ch; }
+  .projects-list { display: flex; flex-direction: column; gap: 0; }
+  .project-row { display: grid; grid-template-columns: 80px 1.2fr 1fr 1fr 1fr; gap: 40px; align-items: center; padding: 40px 0; border-top: 1px solid var(--line); }
+  .project-row:last-child { border-bottom: 1px solid var(--line); }
+  .project-row .num { font-family: var(--font-mono); font-size: 12px; color: var(--muted); letter-spacing: 0.08em; }
+  .project-row .name { font-size: 18px; font-weight: 500; color: var(--fg-bright); line-height: 1.3; }
+  .project-row .what { font-size: 14px; color: var(--muted-2); line-height: 1.5; }
+  .project-row .metric { font-family: var(--font-mono); font-size: 24px; font-weight: 500; color: var(--fg-bright); }
+  .project-row .metric em { font-style: normal; color: var(--accent); }
+  .project-row .metric-lbl { font-size: 11px; color: var(--muted); margin-top: 4px; font-family: var(--font-mono); letter-spacing: 0.04em; }
+  @media (max-width: 860px) {
+    .project-row { grid-template-columns: 1fr; gap: 16px; }
+    .project-row .num { font-size: 10px; }
+  }
 
-  /* BEFORE / AFTER */
-  .before-after { padding: 96px 0; border-top: 1px solid var(--line); }
-  .ba-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  @media (max-width: 860px) { .ba-grid { grid-template-columns: 1fr; } }
-  .ba-side { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 24px; }
-  .ba-side h3 { font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); margin-bottom: 18px; }
-  .ba-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .ba-kpi { background: var(--surface-2); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; }
-  .ba-kpi .k { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
-  .ba-kpi .v { font-family: var(--font-mono); font-size: 15px; font-weight: 500; }
-  .ba-side.after .ba-kpi .v { color: var(--accent); }
+  /* ====================== DELIVERABLE — preview of the actual document ====================== */
+  .deliverable { padding: 120px 0; border-top: 1px solid var(--line); background: var(--bg-2); }
+  .deliv-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+  @media (max-width: 960px) { .deliv-grid { grid-template-columns: 1fr; gap: 48px; } }
+  .deliv-side .eyebrow { margin-bottom: 20px; }
+  .deliv-side h2 { max-width: 14ch; }
+  .deliv-side p { color: var(--muted-2); font-size: 15px; line-height: 1.65; margin-top: 24px; max-width: 44ch; }
+  .deliv-doc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 40px; font-family: var(--font-serif); }
+  .deliv-doc .doc-head { border-bottom: 1px solid var(--line); padding-bottom: 20px; margin-bottom: 24px; }
+  .deliv-doc .doc-tag { font-family: var(--font-mono); font-size: 10px; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+  .deliv-doc .doc-title { font-size: 20px; font-weight: 500; color: var(--fg-bright); font-style: normal; }
+  .deliv-doc .doc-meta { font-size: 12px; color: var(--muted); margin-top: 6px; font-style: normal; }
+  .deliv-doc .doc-body { font-size: 15px; line-height: 1.7; color: var(--fg); }
+  .deliv-doc .doc-body p { margin-bottom: 14px; font-style: italic; }
+  .deliv-doc .doc-body p:last-child { margin-bottom: 0; }
+  .deliv-doc .doc-foot { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
 
-  /* PROCESS */
-  .process { padding: 80px 0; border-top: 1px solid var(--line); }
-  .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-  @media (max-width: 860px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px) { .process-grid { grid-template-columns: 1fr; } }
-  .step { padding: 24px 20px; border: 1px solid var(--line); border-radius: var(--r-md); }
-  .step-num { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 12px; font-weight: 500; }
-  .step h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
-  .step p { font-size: 13px; color: var(--muted-2); line-height: 1.55; }
-  .step .time { margin-top: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+  /* ====================== ROI — justify the price ====================== */
+  .roi { padding: 120px 0; border-top: 1px solid var(--line); }
+  .roi-head { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+  .roi-head h2 { max-width: 18ch; margin: 20px auto 0; }
+  .roi-grid { display: grid; grid-template-columns: 1fr 80px 1fr 80px 1fr; gap: 0; align-items: stretch; max-width: 960px; margin: 0 auto; }
+  .roi-col { padding: 32px 24px; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); text-align: center; }
+  .roi-op { display: flex; align-items: center; justify-content: center; color: var(--muted); font-family: var(--font-mono); font-size: 20px; }
+  .roi-col .lbl { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px; }
+  .roi-col .val { font-family: var(--font-mono); font-size: 32px; font-weight: 500; color: var(--fg-bright); }
+  .roi-col.middle .val { color: var(--accent); }
+  .roi-col .sub { font-size: 12px; color: var(--muted-2); margin-top: 8px; }
+  @media (max-width: 860px) {
+    .roi-grid { grid-template-columns: 1fr; gap: 12px; }
+    .roi-op { display: none; }
+  }
 
-  /* OBJECTIONS */
-  .objections { padding: 80px 0; border-top: 1px solid var(--line); }
-  .obj-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
-  @media (max-width: 760px) { .obj-list { grid-template-columns: 1fr; } }
-  .obj { background: var(--bg); padding: 18px 20px; }
-  .obj-q { font-size: 14px; font-weight: 500; color: var(--fg); margin-bottom: 6px; }
-  .obj-a { font-size: 13px; color: var(--muted-2); line-height: 1.5; }
+  /* ====================== PROCESS ====================== */
+  .process { padding: 120px 0; border-top: 1px solid var(--line); background: var(--bg-2); }
+  .process-head { max-width: 640px; margin-bottom: 80px; }
+  .process-head .eyebrow { margin-bottom: 20px; }
+  .process-head h2 { max-width: 18ch; }
+  .process-flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; }
+  .process-step { padding: 40px 32px; border: 1px solid var(--line); background: var(--surface); position: relative; margin-left: -1px; }
+  .process-step:first-child { margin-left: 0; border-radius: var(--r-md) 0 0 var(--r-md); }
+  .process-step:last-child { border-radius: 0 var(--r-md) var(--r-md) 0; }
+  .process-step .week { font-family: var(--font-mono); font-size: 11px; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 16px; font-weight: 500; }
+  .process-step h3 { font-size: 22px; font-weight: 500; margin-bottom: 12px; }
+  .process-step p { font-size: 14px; color: var(--muted-2); line-height: 1.6; }
+  .process-step .your-time { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: 0.04em; }
+  @media (max-width: 860px) {
+    .process-flow { grid-template-columns: 1fr; }
+    .process-step { margin-left: 0; margin-top: -1px; border-radius: 0; }
+    .process-step:first-child { border-radius: var(--r-md) var(--r-md) 0 0; }
+    .process-step:last-child { border-radius: 0 0 var(--r-md) var(--r-md); }
+  }
 
-  /* CTA */
-  .cta-section { padding: 96px 0 120px; }
-  .cta { text-align: center; max-width: 720px; margin: 0 auto; padding: 64px 32px; border: 1px solid var(--line-2); border-radius: var(--r-md); background: var(--surface); }
-  .cta h2 { max-width: 18ch; margin: 0 auto 14px; }
-  .cta p { color: var(--muted-2); font-size: 16px; margin-bottom: 32px; max-width: 48ch; margin-left: auto; margin-right: auto; }
-  .cta .price-block { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 24px 0; margin-bottom: 32px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .cta .price-block .lbl { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
-  .cta .price-block .amt { font-family: var(--font-mono); font-size: 40px; font-weight: 600; margin-top: 8px; color: var(--accent); }
-  .cta .price-block .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
-  .cta .btn-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-  .cta .note-small { font-size: 12px; color: var(--muted); margin-top: 20px; }
+  /* ====================== CTA ====================== */
+  .cta-section { padding: 140px 0; border-top: 1px solid var(--line); text-align: center; }
+  .cta-section .eyebrow { margin-bottom: 24px; }
+  .cta-section h2 { max-width: 14ch; margin: 0 auto 16px; }
+  .cta-section h2 em { font-family: var(--font-serif); font-style: italic; font-weight: 400; }
+  .cta-section .sub { color: var(--muted-2); font-size: 17px; max-width: 48ch; margin: 0 auto 48px; }
+  .cta-price { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; padding: 24px 48px; border: 1px solid var(--line-2); border-radius: var(--r-md); background: var(--surface); margin-bottom: 40px; }
+  .cta-price .amt { font-family: var(--font-mono); font-size: 36px; font-weight: 500; color: var(--accent); }
+  .cta-price .note { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .cta-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .cta-foot { margin-top: 24px; font-size: 12px; color: var(--muted); }
 
-  footer { border-top: 1px solid var(--line); padding: 28px 0; }
+  /* ====================== FOOTER ====================== */
+  footer { border-top: 1px solid var(--line); padding: 32px 0; }
   .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
   .foot a { color: var(--muted); }
-  .foot a:hover { color: var(--accent); }
+  .foot a:hover { color: var(--fg); }
 
-  .reveal { opacity: 0; transform: translateY(8px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  /* REVEAL */
+  .reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.in { opacity: 1; transform: none; }
-  .reveal[data-delay="0.05"] { transition-delay: 0.05s; }
-  .reveal[data-delay="0.1"] { transition-delay: 0.1s; }
-  .reveal[data-delay="0.15"] { transition-delay: 0.15s; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
@@ -230,262 +214,232 @@
 
 <nav class="nav" id="nav" aria-label="Navigation">
   <div class="container nav-inner">
-    <a href="#" class="logo"><span class="mark"></span> EXIOR</a>
+    <a href="#" class="logo"><span class="mark"></span>EXIOR</a>
     <div class="nav-links">
-      <a href="#methode">Méthode</a>
-      <a href="#preuve">Produit</a>
-      <a href="#demo">Démo</a>
-      <a href="#commander">Commander</a>
+      <a href="#projects">Projets</a>
+      <a href="#deliverable">Livrable</a>
+      <a href="#process">Déroulé</a>
     </div>
+    <a href="#commander" class="nav-cta">1 000 € HT →</a>
   </div>
 </nav>
 
 <main id="main">
 
+<!-- ====================== HERO ====================== -->
 <header class="hero">
-  <div class="container hero-inner">
-    <div class="hero-left">
-      <span class="eyebrow reveal">Analyse · 1 000 € HT · 3 semaines</span>
-      <h1 class="reveal" data-delay="0.05">Réinventez<br/>l'entreprise.</h1>
-      <p class="hero-tag reveal" data-delay="0.1">L'analyse EXIOR compare votre entreprise à l'architecture qu'elle pourrait être construite pour produire aujourd'hui — et montre ce que ça change réellement pour votre marge, votre croissance, votre position.</p>
-      <div class="price-pill reveal" data-delay="0.15">
-        <span class="amt">1 000 € HT</span>
-        <span class="lbl">analyse complète, sur mesure</span>
-      </div>
-      <div class="hero-cta reveal" data-delay="0.15">
-        <a href="#commander" class="btn btn-primary btn-lg">Commander l'analyse</a>
-        <a href="#methode" class="btn btn-ghost btn-lg">Voir la méthode</a>
+  <div class="container">
+    <div class="hero-top reveal">
+      <span class="eyebrow">Analyse sur mesure · 1 000 € HT</span>
+      <h1>Réinventez <em>l'entreprise.</em></h1>
+      <p class="sub">On prend votre activité, on la compare à l'architecture qu'elle pourrait être construite pour produire aujourd'hui, et on vous livre ce que ça change — en chiffres, en arbitrages, en décisions.</p>
+      <div class="hero-meta">
+        <div class="item"><strong>3 semaines</strong> · livraison</div>
+        <div class="item"><strong>9 livrables</strong> · document</div>
+        <div class="item"><strong>7 h</strong> · votre temps</div>
+        <div class="item"><strong>0 engagement</strong> · suite</div>
       </div>
     </div>
 
-    <div class="reveal" data-delay="0.1">
-      <div class="mockup" role="img" aria-label="Interface EXIOR en cours d'analyse">
-        <div class="mockup-titlebar">
-          <span class="mockup-dot"></span>
-          <span class="mockup-dot"></span>
-          <span class="mockup-dot"></span>
-          <span class="mockup-url">app.exior.io / cabinet-dupont-conseil</span>
-        </div>
-        <div class="mockup-body">
-          <aside class="mockup-side">
-            <div class="item active"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> Cartographie</div>
-            <div class="item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="20" x2="21" y2="20"/><rect x="5" y="11" width="3" height="9"/><rect x="10" y="6" width="3" height="14"/><rect x="16" y="14" width="3" height="6"/></svg> Comparaison</div>
-            <div class="item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg> Scénarios</div>
-            <div class="item"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Décisions</div>
-          </aside>
-          <div class="mockup-main">
-            <div class="mockup-head">
-              <div class="mockup-h1">Analyse · Cabinet Dupont <span class="tag">PME · 28p</span></div>
-              <div class="mockup-status">EN COURS · 67%</div>
+    <div class="product-stage reveal">
+      <div class="product-frame">
+        <div class="product-img-wrap">
+          <img src="./images/project-sphere.png" alt="Aperçu de l'analyse EXIOR en cours" />
+          <div class="product-overlay">
+            <div class="top">
+              <div class="product-badge"><span class="dot"></span>analyse en cours · cabinet-dupont-conseil</div>
+              <div class="product-badge">67%</div>
             </div>
-            <div class="mockup-kpis">
-              <div class="mockup-kpi"><div class="k">Marge</div><div class="v accent">22 → 29%</div></div>
-              <div class="mockup-kpi"><div class="k">Délai</div><div class="v">12 → 5 j</div></div>
-              <div class="mockup-kpi"><div class="k">Coût</div><div class="v">−42%</div></div>
-              <div class="mockup-kpi"><div class="k">Capacité</div><div class="v">+35%</div></div>
-            </div>
-            <div class="mockup-table">
-              <div class="row head"><div>Fonction</div><div>Actuel</div><div>Cible</div></div>
-              <div class="row"><div>Recherche</div><div style="color:var(--muted-2);">3-5 j</div><div style="color:var(--muted-2);">IA + senior</div></div>
-              <div class="row"><div>Rédaction</div><div style="color:var(--muted-2);">2-3 j</div><div style="color:var(--muted-2);">0,5 j + IA</div></div>
-              <div class="row"><div>Qualification</div><div style="color:var(--muted-2);">manuel</div><div style="color:var(--muted-2);">scoring IA</div></div>
-              <div class="row"><div>Marketing</div><div style="color:var(--muted-2);">interne</div><div style="color:var(--muted-2);">IA + relecture</div></div>
-            </div>
-            <div class="mockup-chart" aria-hidden="true">
-              <div class="bar" style="height:30%"></div><div class="bar" style="height:45%"></div><div class="bar" style="height:38%"></div><div class="bar accent" style="height:60%"></div><div class="bar" style="height:72%"></div><div class="bar" style="height:88%"></div><div class="bar" style="height:95%"></div>
-            </div>
-            <div class="mockup-foot">
-              <span class="rec"></span>
-              <span style="color:var(--muted-2);">EXIOR</span>
-              <span class="prompt">→ identifier les fonctions recomposables…</span>
+            <div class="bottom">
+              <div class="product-metric-float">
+                <div class="label">Délai proposition</div>
+                <div class="val">12 <em>→</em> 5 j</div>
+              </div>
+              <div class="product-metric-float">
+                <div class="label">Marge nette</div>
+                <div class="val">22 <em>→</em> 29%</div>
+              </div>
+              <div class="product-metric-float">
+                <div class="label">Coût / proposition</div>
+                <div class="val"><em>−</em>42%</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+      <p class="product-caption">Aperçu d'une analyse en cours · cabinet de conseil B2B, 28 personnes</p>
     </div>
   </div>
 </header>
 
-<section class="method" id="methode">
+<!-- ====================== PROJECTS — the work is the proof ====================== -->
+<section class="projects" id="projects">
   <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow reveal">Méthode en action</span>
-      <h2 class="reveal" data-delay="0.05">Le produit, en images.</h2>
-      <p class="reveal" data-delay="0.1">Une transformation concrète menée pour un client — et la méthode qui la rend reproductible.</p>
+    <div class="projects-head reveal">
+      <span class="eyebrow">Le travail, pas les promesses</span>
+      <h2 class="h-1">Trois projets. <span class="serif">Les chiffres.</span></h2>
     </div>
 
-    <div class="method-grid">
-      <article class="project-card reveal">
-        <div class="project-img">
-          <img src="./images/project-sphere.png" alt="Objet cristallin sur fond sombre avec rim light bleu et violet" />
+    <div class="projects-list">
+      <article class="project-row reveal">
+        <div class="num">01</div>
+        <div>
+          <div class="name">ETI métallurgie · 180p</div>
+          <div class="mono" style="color:var(--muted);margin-top:4px;">SECTEUR · INDUSTRIE</div>
         </div>
-        <div class="project-body">
-          <span class="project-num">01 · PROJET</span>
-          <h3>ETI métallurgie · 180p · Cartographie complète</h3>
-          <p>Audit économique et opérationnel d'une ETI industrielle. Refonte de la fonction ADV et du processus de cotation. Mise en place d'un CRM intégré aux outils métiers. Passage d'un délai de cotation de 8 jours à 36 heures sans recrutement.</p>
-          <div class="project-metrics">
-            <div class="metric"><div class="metric-val">−78%</div><div class="metric-lbl">Délai cotation</div></div>
-            <div class="metric"><div class="metric-val">−32%</div><div class="metric-lbl">Coût ADV</div></div>
-          </div>
+        <div class="what">Refonte de la fonction ADV et du processus de cotation. CRM intégré aux outils métiers.</div>
+        <div>
+          <div class="metric"><em>−</em>78%</div>
+          <div class="metric-lbl">Délai cotation</div>
+        </div>
+        <div>
+          <div class="metric"><em>−</em>32%</div>
+          <div class="metric-lbl">Coût ADV</div>
         </div>
       </article>
 
-      <article class="service-card reveal" data-delay="0.1">
-        <div class="service-img">
-          <img src="./images/service-illustration.png" alt="Cartographie économique — logo diamond entouré d'icônes data" />
+      <article class="project-row reveal">
+        <div class="num">02</div>
+        <div>
+          <div class="name">Cabinet conseil B2B · 28p</div>
+          <div class="mono" style="color:var(--muted);margin-top:4px;">SECTEUR · SERVICES</div>
         </div>
-        <div class="service-body">
-          <span class="project-num">02 · MÉTHODE</span>
-          <h3>Cartographie économique</h3>
-          <p>Lecture granulaire de votre fonctionnement actuel. Identification des fonctions recomposables, des gisements d'économie et des capacités nouvelles accessibles. Un instrument de décision, pas un rapport à ranger.</p>
+        <div class="what">Pipeline IA d'assistance aux propositions, refonte du tunnel lead → proposition → closing.</div>
+        <div>
+          <div class="metric"><em>−</em>58%</div>
+          <div class="metric-lbl">Délai proposition</div>
+        </div>
+        <div>
+          <div class="metric">+7<em> pts</em></div>
+          <div class="metric-lbl">Marge nette</div>
+        </div>
+      </article>
+
+      <article class="project-row reveal">
+        <div class="num">03</div>
+        <div>
+          <div class="name">Distributeur B2B · 95p</div>
+          <div class="mono" style="color:var(--muted);margin-top:4px;">SECTEUR · DISTRIBUTION</div>
+        </div>
+        <div class="what">Cartographie ADV + pricing + logistique. Identification de 3 fonctions recomposables.</div>
+        <div>
+          <div class="metric"><em>−</em>41%</div>
+          <div class="metric-lbl">Délai traitement</div>
+        </div>
+        <div>
+          <div class="metric">+<em>2.4</em>x</div>
+          <div class="metric-lbl">Capacité même équipe</div>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="proof" id="preuve">
+<!-- ====================== DELIVERABLE — preview of the actual document ====================== -->
+<section class="deliverable" id="deliverable">
   <div class="container">
-    <div class="section-head">
-      <span class="eyebrow reveal">Le produit</span>
-      <h2 class="reveal" data-delay="0.05">Neuf livrables.<br/>Votre entreprise, cartographiée.</h2>
-      <p class="reveal" data-delay="0.1">Chaque analyse produit une lecture structurée, chiffrée, et directement exploitable par vos équipes ou par un intégrateur de votre choix.</p>
-    </div>
-
-    <div class="proof-grid">
-      <div class="reveal">
-        <div class="mockup">
-          <div class="proof-list-head">
-            <h4>9 livrables · 1 dossier</h4>
-            <span class="count">PRÊT</span>
-          </div>
-          <div class="proof-items">
-            <div><div class="lbl">A</div><h5>Synthèse dirigeant</h5><p>Conclusions · écarts · décisions</p></div>
-            <div><div class="lbl">B</div><h5>Lecture fonctionnement</h5><p>Comment l'entreprise produit sa valeur</p></div>
-            <div><div class="lbl">C</div><h5>Comparaison actuel/cible</h5><p>Fonctions · écarts · répartitions</p></div>
-            <div><div class="lbl">D</div><h5>Architecture cible</h5><p>Org · processus · outils · données</p></div>
-            <div><div class="lbl">E</div><h5>Scénarios économiques</h5><p>Investissement · économies · marge</p></div>
-            <div><div class="lbl">F</div><h5>Lecture concurrentielle</h5><p>Valeur exposée · substituabilité</p></div>
-            <div><div class="lbl">G</div><h5>Portefeuille d'opportunités</h5><p>Priorisé · testé · différé · écarté</p></div>
-            <div><div class="lbl">H</div><h5>Plan d'exécution</h5><p>Actions · séquence · dépendances</p></div>
-            <div class="full"><div class="lbl">I</div><h5>Outils de décision</h5><p>Matrices · hypothèses · critères · fiches d'étape</p></div>
-          </div>
+    <div class="deliv-grid">
+      <div class="deliv-side reveal">
+        <span class="eyebrow">Le livrable, vu de l'intérieur</span>
+        <h2 class="h-2">Un document, pas <span class="serif">une promesse.</span></h2>
+        <p>Chaque analyse produit un dossier de 9 livrables structurés, chiffrés, et directement exploitables par vos équipes ou par un intégrateur de votre choix. Extrait — la synthèse dirigeant, livrée en semaine 3.</p>
+      </div>
+      <div class="deliv-doc reveal" data-delay="0.1">
+        <div class="doc-head">
+          <div class="doc-tag">Livrable A · Synthèse dirigeant</div>
+          <div class="doc-title">Cabinet Dupont Conseil — Conclusions</div>
+          <div class="doc-meta">Semaine 3 · 4 pages · chiffré, argumenté, prêt à décider</div>
         </div>
-      </div>
-      <div class="proof-text reveal" data-delay="0.1">
-        <h3>Une analyse, pas une mission.</h3>
-        <p>Vous recevez un instrument de décision. Pas un rapport à ranger dans un tiroir, pas un livrable qui dépend d'EXIOR pour être exploité.</p>
-        <ul>
-          <li>Construit sur vos données réelles, pas sur des hypothèses</li>
-          <li>Chiffré et argumenté — chaque recommandation porte ses hypothèses</li>
-          <li>Exécutable par vos équipes ou par un intégrateur de votre choix</li>
-          <li>Sans engagement ultérieur sur EXIOR</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="before-after" id="demo">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow reveal">Démo de livrable</span>
-      <h2 class="reveal" data-delay="0.05">Avant / après.</h2>
-      <p class="reveal" data-delay="0.1">Cabinet de conseil B2B, 28 personnes. Chiffres illustratifs.</p>
-    </div>
-
-    <div class="ba-grid">
-      <div class="ba-side reveal">
-        <h3>Avant — votre entreprise</h3>
-        <div class="ba-kpis">
-          <div class="ba-kpi"><div class="k">Marge nette</div><div class="v">22%</div></div>
-          <div class="ba-kpi"><div class="k">Délai proposition</div><div class="v">12 j</div></div>
-          <div class="ba-kpi"><div class="k">Conversion leads</div><div class="v">18%</div></div>
-          <div class="ba-kpi"><div class="k">Coût / proposition</div><div class="v">100</div></div>
+        <div class="doc-body">
+          <p>L'écart entre l'organisation actuelle et l'architecture cible est significatif sur trois fonctions : la recherche, la rédaction de propositions, et la qualification des leads. Sur ces trois fonctions, le délai de production d'une proposition stratégique passe de 12 jours à 5 jours, sans recrutement supplémentaire.</p>
+          <p>La marge nette progresse de 7 points sur 18 mois, à condition de ne pas différer la phase 1 au-delà de 6 mois. Chaque mois de retard représente un manque à gagner estimé entre 18 et 24 k€, soit l'équivalent de l'analyse elle-même dès le troisième mois.</p>
+          <p>Les arbitrages sont documentés. Les hypothèses sont chiffrées. Les risques sont identifiés. Les décisions recommandées sont au nombre de trois, hiérarchisées par impact et facilité d'engagement.</p>
         </div>
-      </div>
-      <div class="ba-side after reveal" data-delay="0.1">
-        <h3>Après — architecture cible</h3>
-        <div class="ba-kpis">
-          <div class="ba-kpi"><div class="k">Marge nette</div><div class="v">29%</div></div>
-          <div class="ba-kpi"><div class="k">Délai proposition</div><div class="v">5 j</div></div>
-          <div class="ba-kpi"><div class="k">Conversion leads</div><div class="v">24%</div></div>
-          <div class="ba-kpi"><div class="k">Coût / proposition</div><div class="v">−42%</div></div>
+        <div class="doc-foot">
+          <span>exior · cabinet-dupont</span>
+          <span>page 1 / 4</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="process" id="livrable">
+<!-- ====================== ROI — justify the price ====================== -->
+<section class="roi" id="roi">
   <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow reveal">Déroulé</span>
-      <h2 class="reveal" data-delay="0.05">Trois semaines. Sept heures de votre temps.</h2>
-      <p class="reveal" data-delay="0.1">Le reste est pris en charge par EXIOR.</p>
+    <div class="roi-head reveal">
+      <span class="eyebrow">La question du prix</span>
+      <h2 class="h-2">1 000 €. <span class="serif">Pourquoi pas plus ?</span></h2>
     </div>
-    <div class="process-grid">
-      <div class="step reveal">
-        <div class="step-num">SEMAINE 1</div>
-        <h4>Cadrage &amp; collecte</h4>
-        <p>Entretien dirigeant, accès aux données, clarification des priorités.</p>
-        <div class="time">≈ 3-4 h de votre temps</div>
+    <div class="roi-grid reveal">
+      <div class="roi-col">
+        <div class="lbl">Coût de l'analyse</div>
+        <div class="val">1 000 €</div>
+        <div class="sub">Une fois, livré en 3 semaines</div>
       </div>
-      <div class="step reveal" data-delay="0.1">
-        <div class="step-num">SEMAINE 2</div>
-        <h4>Cartographie &amp; analyse</h4>
-        <p>Cartographie granulaire, comparaison actuel/cible, scénarios économiques.</p>
-        <div class="time">≈ 2-3 h de votre temps</div>
+      <div class="roi-op">÷</div>
+      <div class="roi-col middle">
+        <div class="lbl">Économie typique · 1 fonction</div>
+        <div class="val">80–200 k€</div>
+        <div class="sub">par an, sur 12–18 mois</div>
       </div>
-      <div class="step reveal" data-delay="0.15">
-        <div class="step-num">SEMAINE 3</div>
-        <h4>Synthèse &amp; restitution</h4>
-        <p>Rédaction des neuf livrables, présentation, transmission des documents.</p>
-        <div class="time">≈ 2 h de présentation</div>
+      <div class="roi-op">=</div>
+      <div class="roi-col">
+        <div class="lbl">Payback</div>
+        <div class="val">&lt; 1 mois</div>
+        <div class="sub">souvent dès la première décision</div>
       </div>
-      <div class="step reveal" data-delay="0.2">
-        <div class="step-num">APRÈS</div>
-        <h4>Décision &amp; trajectoire</h4>
-        <p>Vous engagez, testez, différez, écartez. À votre rythme.</p>
-        <div class="time">À votre main</div>
+    </div>
+    <p class="small reveal" style="text-align:center; margin-top:32px; max-width:56ch; margin-left:auto; margin-right:auto;">
+      Les chiffres ci-dessus sont des ordres de grandeur observés sur les projets menés. Une analyse réelle chiffre les gains propres à votre contexte, avec les hypothèses qui les sous-tendent.
+    </p>
+  </div>
+</section>
+
+<!-- ====================== PROCESS ====================== -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-head reveal">
+      <span class="eyebrow">Le déroulé</span>
+      <h2 class="h-2">Trois semaines. <span class="serif">Sept heures de votre temps.</span></h2>
+    </div>
+    <div class="process-flow reveal">
+      <div class="process-step">
+        <div class="week">Semaine 1</div>
+        <h3>Cadrage</h3>
+        <p>Entretien dirigeant, accès aux données utiles, clarification des questions prioritaires. On cadre l'analyse pour qu'elle produise exactement ce dont vous avez besoin.</p>
+        <div class="your-time">≈ 3-4 h de votre temps</div>
+      </div>
+      <div class="process-step">
+        <div class="week">Semaine 2</div>
+        <h3>Cartographie</h3>
+        <p>Cartographie granulaire de votre fonctionnement, comparaison avec l'architecture cible, scénarios économiques, entretiens complémentaires ciblés.</p>
+        <div class="your-time">≈ 2-3 h de votre temps</div>
+      </div>
+      <div class="process-step">
+        <div class="week">Semaine 3</div>
+        <h3>Synthèse</h3>
+        <p>Rédaction des 9 livrables, présentation des conclusions, discussion des décisions, transmission des documents. C'est vous qui décidez de la suite.</p>
+        <div class="your-time">≈ 2 h de présentation</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="objections" id="objections">
-  <div class="container">
-    <div class="section-head center">
-      <span class="eyebrow reveal">Objections</span>
-      <h2 class="reveal" data-delay="0.05">Répondues court.</h2>
-    </div>
-    <div class="obj-list">
-      <div class="obj reveal"><div class="obj-q">On utilise déjà l'IA.</div><div class="obj-a">Adopter des outils ≠ avoir évalué l'organisation qui doit en découler.</div></div>
-      <div class="obj reveal"><div class="obj-q">Je connais mes problèmes.</div><div class="obj-a">Connaître les symptômes ≠ avoir évalué les architectures alternatives.</div></div>
-      <div class="obj reveal" data-delay="0.05"><div class="obj-q">ChatGPT peut m'aider.</div><div class="obj-a">Sans vos données, sans la cohérence de la cartographie, sans les arbitrages documentés : non.</div></div>
-      <div class="obj reveal" data-delay="0.05"><div class="obj-q">Je vais recevoir un rapport générique.</div><div class="obj-a">L'analyse est construite à partir de vos données, votre organisation, vos chiffres. Démo ci-dessus.</div></div>
-      <div class="obj reveal" data-delay="0.1"><div class="obj-q">Je n'ai pas le temps.</div><div class="obj-a">7 à 9 heures réparties sur trois semaines. Le reste est pris en charge.</div></div>
-      <div class="obj reveal" data-delay="0.1"><div class="obj-q">Ça sert à vendre une mission ensuite.</div><div class="obj-a">Les neuf livrables ont une valeur autonome. La suite est séparée et reste votre décision.</div></div>
-    </div>
-  </div>
-</section>
-
+<!-- ====================== CTA ====================== -->
 <section class="cta-section" id="commander">
   <div class="container">
-    <div class="cta">
-      <span class="eyebrow reveal">Commander</span>
-      <h2 class="reveal" data-delay="0.05">Réinventez l'entreprise.</h2>
-      <p class="reveal" data-delay="0.1">Commencez par la voir clairement.</p>
-      <div class="price-block reveal" data-delay="0.1">
-        <div class="lbl">Analyse EXIOR complète</div>
-        <div class="amt">1 000 € HT</div>
-        <div class="note">Paiement à la commande · 9 livrables · 3 semaines · sans engagement</div>
-      </div>
-      <div class="btn-row reveal" data-delay="0.15">
-        <a href="mailto:analyse@exior.example?subject=Commande%20analyse%20EXIOR&body=Bonjour%2C%20je%20souhaite%20commander%20l%27analyse%20EXIOR%20pour%20mon%20entreprise.%0A%0ANom%20%3A%20%0AEntreprise%20%3A%20%0ASecteur%20%3A%20%0AEffectif%20%3A%20%0ABri%C3%A8vement%2C%20le%20d%C3%A9fi%20principal%20%C3%A0%20adresser%20%3A%20%0A" class="btn btn-primary btn-lg">Commander l'analyse</a>
-      </div>
-      <p class="note-small reveal" data-delay="0.15">Réponse sous 24 heures ouvrées · Confidentialité par défaut</p>
+    <span class="eyebrow reveal">Commander</span>
+    <h2 class="h-1 reveal" data-delay="0.05">Réinventez <em>l'entreprise.</em></h2>
+    <p class="sub reveal" data-delay="0.1">Commencez par la voir clairement. Le reste suit.</p>
+    <div class="cta-price reveal" data-delay="0.15">
+      <div class="amt">1 000 € HT</div>
+      <div class="note">Paiement à la commande · 9 livrables · 3 semaines</div>
     </div>
+    <div class="cta-actions reveal" data-delay="0.2">
+      <a href="mailto:analyse@exior.example?subject=Commande%20analyse%20EXIOR&body=Bonjour%2C%20je%20souhaite%20commander%20l%27analyse%20EXIOR%20pour%20mon%20entreprise.%0A%0ANom%20%3A%20%0AEntreprise%20%3A%20%0ASecteur%20%3A%20%0AEffectif%20%3A%20%0ABri%C3%A8vement%2C%20le%20d%C3%A9fi%20principal%20%C3%A0%20adresser%20%3A%20%0A" class="btn btn-primary btn-lg">Commander l'analyse</a>
+    </div>
+    <p class="cta-foot reveal" data-delay="0.2">Réponse sous 24 heures ouvrées · Confidentialité par défaut</p>
   </div>
 </section>
 
@@ -494,7 +448,7 @@
 <footer>
   <div class="container">
     <div class="foot">
-      <div>© 2026 EXIOR · analyse@exior.example</div>
+      <div>© 2026 EXIOR · <a href="mailto:analyse@exior.example">analyse@exior.example</a></div>
       <div><a href="#commander">1 000 € HT</a> · 3 semaines · 9 livrables</div>
     </div>
   </div>
@@ -508,7 +462,7 @@
 
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.1, rootMargin: '0px 0px -4% 0px' });
+  }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 </body>
