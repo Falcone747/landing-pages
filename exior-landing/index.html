@@ -4,71 +4,60 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>EXIOR — Technology translated into enterprise economics</title>
-<meta name="description" content="EXIOR traduit l'état de l'art technologique en modèle opérationnel, structure de coûts et trajectoire de transformation pour votre entreprise." />
+<meta name="description" content="EXIOR traduit l'état de l'art technologique en nouvelle structure de coûts, modèle opérationnel et trajectoire de transformation pour votre entreprise." />
 <meta name="theme-color" content="#050505" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
 <style>
 :root{--bg:#050505;--fg:#f7f7f2;--muted:#a9aaa6;--line:rgba(255,255,255,.12);--card:rgba(255,255,255,.045);--accent:#78f7bf;--accent2:#24c982;--max:1120px;--body:"Inter",sans-serif;--display:"Space Grotesk",sans-serif}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
-nav{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.logo{font:700 21px/1 var(--display);letter-spacing:.06em;display:flex;align-items:center;gap:10px}
-.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px rgba(120,247,191,.6)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}.container{width:min(var(--max),calc(100% - 40px));margin:auto}
+nav{position:sticky;top:0;z-index:20;background:rgba(5,5,5,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between}.logo{font:700 21px/1 var(--display);letter-spacing:.06em;display:flex;align-items:center;gap:10px}.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px rgba(120,247,191,.6)}
 .nav a.cta,.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:13px 20px;font-weight:650;font-size:14px;background:linear-gradient(110deg,var(--accent),var(--accent2));color:#042116}
-main{overflow:hidden}.hero{padding:110px 0 88px;position:relative}.hero:before{content:"";position:absolute;width:800px;height:800px;border-radius:50%;left:50%;top:-500px;transform:translateX(-50%);background:radial-gradient(circle,rgba(120,247,191,.16),transparent 68%);pointer-events:none}
-.hero-inner{position:relative;max-width:980px}.kicker{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:20px}
-h1,h2,h3{font-family:var(--display);letter-spacing:-.035em;line-height:1.02;margin:0}h1{font-size:clamp(48px,8vw,92px);max-width:12ch}
-.hero p{font-size:clamp(20px,2.5vw,28px);line-height:1.35;color:#d7d8d4;max-width:34ch;margin:28px 0 34px}
-.hero .sub{font-size:15px;color:var(--muted);margin:14px 0 0;max-width:70ch}
-section{padding:88px 0;border-top:1px solid var(--line)}.head{max-width:860px;margin-bottom:46px}h2{font-size:clamp(36px,5vw,60px);max-width:18ch}
-.head p{color:var(--muted);font-size:19px;max-width:68ch;margin:20px 0 0}.truth{display:grid;grid-template-columns:1.05fr .95fr;gap:28px}
-.panel{border:1px solid var(--line);background:var(--card);border-radius:22px;padding:30px}.panel strong{font-family:var(--display);font-size:22px;display:block;margin-bottom:12px}.panel p{margin:0;color:#c7c8c3}
-.quote{font-family:var(--display);font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.quote em{font-style:normal;color:var(--accent)}
+main{overflow:hidden}.hero{padding:112px 0 92px;position:relative}.hero:before{content:"";position:absolute;width:820px;height:820px;border-radius:50%;left:50%;top:-520px;transform:translateX(-50%);background:radial-gradient(circle,rgba(120,247,191,.15),transparent 68%);pointer-events:none}.hero-inner{position:relative;max-width:1020px}.kicker{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent);font-weight:700;margin-bottom:20px}
+h1,h2,h3{font-family:var(--display);letter-spacing:-.035em;line-height:1.02;margin:0}h1{font-size:clamp(48px,7.5vw,88px);max-width:13ch}.hero p{font-size:clamp(20px,2.3vw,27px);line-height:1.36;color:#d7d8d4;max-width:38ch;margin:28px 0 34px}.hero .sub{font-size:15px;color:var(--muted);margin:14px 0 0;max-width:72ch}
+section{padding:88px 0;border-top:1px solid var(--line)}.head{max-width:880px;margin-bottom:46px}h2{font-size:clamp(36px,5vw,60px);max-width:18ch}.head p{color:var(--muted);font-size:19px;max-width:70ch;margin:20px 0 0}
+.truth{display:grid;grid-template-columns:1.08fr .92fr;gap:28px}.panel{border:1px solid var(--line);background:var(--card);border-radius:22px;padding:30px}.panel strong{font-family:var(--display);font-size:22px;display:block;margin-bottom:12px}.panel p{margin:0;color:#c7c8c3}.quote{font-family:var(--display);font-size:clamp(30px,4vw,48px);line-height:1.08;letter-spacing:-.03em}.quote em{font-style:normal;color:var(--accent)}
 .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.item{border-top:1px solid var(--line);padding:22px 0}.item b{font-family:var(--display);font-size:18px}.item p{color:var(--muted);margin:8px 0 0;font-size:15px}
-.steps{counter-reset:s;display:grid;gap:0}.step{display:grid;grid-template-columns:80px 1fr;gap:10px;padding:24px 0;border-top:1px solid var(--line)}.step:before{counter-increment:s;content:"0" counter(s);font:600 14px/1 var(--display);color:var(--accent);padding-top:5px}.step h3{font-size:24px;margin-bottom:7px}.step p{margin:0;color:var(--muted);max-width:66ch}
-.offer{border:1px solid rgba(120,247,191,.32);background:linear-gradient(180deg,rgba(120,247,191,.08),rgba(255,255,255,.025));border-radius:26px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end}.offer h2{max-width:16ch}.offer p{color:#d2d3cf;max-width:62ch}
-.price{text-align:right}.price .amount{font:700 clamp(40px,6vw,66px)/1 var(--display)}.price .tax{font-size:14px;color:var(--muted);margin:8px 0 18px}
-.final{text-align:center;padding:110px 0}.final h2{margin:auto;max-width:18ch}.final p{max-width:50ch;margin:22px auto 30px;color:var(--muted);font-size:18px}
+.steps{counter-reset:s;display:grid;gap:0}.step{display:grid;grid-template-columns:80px 1fr;gap:10px;padding:24px 0;border-top:1px solid var(--line)}.step:before{counter-increment:s;content:"0" counter(s);font:600 14px/1 var(--display);color:var(--accent);padding-top:5px}.step h3{font-size:24px;margin-bottom:7px}.step p{margin:0;color:var(--muted);max-width:68ch}
+.offer{border:1px solid rgba(120,247,191,.32);background:linear-gradient(180deg,rgba(120,247,191,.08),rgba(255,255,255,.025));border-radius:26px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end}.offer h2{max-width:16ch}.offer p{color:#d2d3cf;max-width:64ch}.offer-side{text-align:right;max-width:290px}.offer-side .label{color:var(--muted);font-size:14px;margin-bottom:18px}
+.final{text-align:center;padding:110px 0}.final h2{margin:auto;max-width:18ch}.final p{max-width:54ch;margin:22px auto 30px;color:var(--muted);font-size:18px}
 footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-@media(max-width:760px){.truth,.offer{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:84px}.price{text-align:left}}
+@media(max-width:760px){.truth,.offer{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.hero{padding-top:84px}.offer-side{text-align:left;max-width:none}}
 </style>
 </head>
 <body>
 <nav>
   <div class="container nav">
     <a class="logo" href="#"><span class="dot"></span>EXIOR</a>
-    <a class="cta" href="#offre">Évaluer l’écart technologique</a>
+    <a class="cta" href="#offre">Évaluer mon entreprise</a>
   </div>
 </nav>
 
 <main>
 <header class="hero">
   <div class="container hero-inner">
-    <div class="kicker">Enterprise technology intelligence</div>
-    <h1>Votre entreprise doit être reconstruite pour les capacités disponibles aujourd’hui.</h1>
-    <p>EXIOR traduit l’état réel de la technologie dans votre modèle économique, votre organisation et votre structure de coûts.</p>
+    <div class="kicker">Technology → Enterprise Economics</div>
+    <h1>Le coût de produire, analyser et décider a changé.</h1>
+    <p>EXIOR mesure ce que les capacités technologiques disponibles aujourd’hui changent dans votre modèle économique — puis définit l’organisation qui doit en résulter.</p>
     <a class="btn" href="#offre">Évaluer mon entreprise</a>
-    <div class="sub">Une lecture technologique, économique et opérationnelle de ce que votre entreprise doit devenir — fonction par fonction, coût par coût, décision par décision.</div>
+    <div class="sub">Structure de coûts. Modèle opérationnel. Frontières de marché. Valeur exposée. Nouvelles sources de marge. Trajectoire d’exécution.</div>
   </div>
 </header>
 
 <section>
   <div class="container">
     <div class="head">
-      <h2>La technologie a déjà déplacé la frontière économique de votre métier.</h2>
-      <p>Des capacités qui exigeaient auparavant des équipes, des intermédiaires, des délais et des couches de contrôle peuvent désormais être produites avec des architectures radicalement différentes. Cela modifie directement le coût de production de la valeur, les frontières entre secteurs et la structure des entreprises capables de la capter.</p>
+      <h2>Votre entreprise ne doit pas être comparée à son passé.</h2>
+      <p>Elle doit être comparée à ce qu’il est possible de construire aujourd’hui pour produire la même valeur — avec les meilleures capacités technologiques, la bonne combinaison humain / système et une structure économique conçue à partir de zéro.</p>
     </div>
     <div class="truth">
       <div class="panel">
-        <div class="quote">Votre secteur n’est pas la référence. <em>La valeur achetée par vos clients l’est.</em></div>
+        <div class="quote">Votre secteur n’est qu’une convention historique. <em>La valeur achetée par le client est la véritable unité d’analyse.</em></div>
       </div>
       <div class="panel">
-        <strong>EXIOR repart de cette valeur.</strong>
-        <p>Nous identifions ce que vos clients achètent réellement, puis nous déterminons quelle organisation, quelle technologie et quel modèle économique permettent aujourd’hui de produire et capter cette valeur avec la meilleure efficacité possible.</p>
+        <strong>La concurrence pertinente dépasse votre catégorie.</strong>
+        <p>Une plateforme, un logiciel devenu opérateur, une banque, un acteur international ou une organisation nouvellement conçue peut capter la même valeur sans reproduire votre structure actuelle. EXIOR intègre cette réalité dans l’analyse.</p>
       </div>
     </div>
   </div>
@@ -77,16 +66,16 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px
 <section>
   <div class="container">
     <div class="head">
-      <h2>Une traduction technologique complète, appliquée à votre organisation.</h2>
-      <p>EXIOR ne traite pas l’intelligence artificielle, le logiciel, l’automatisation, la donnée ou l’infrastructure comme des sujets séparés. Nous les intégrons dans une seule lecture : ce que les capacités disponibles changent concrètement dans votre entreprise, et ce que cela implique économiquement.</p>
+      <h2>Nous transformons l’état de l’art technologique en décisions économiques.</h2>
+      <p>EXIOR relie chaque capacité disponible à une conséquence concrète dans votre entreprise : coût, délai, qualité, capacité, contrôle, risque, marge et potentiel de croissance.</p>
     </div>
     <div class="grid">
-      <div class="item"><b>Structure de coûts cible</b><p>Ce que chaque fonction devrait coûter si elle était conçue aujourd’hui à partir des meilleures capacités disponibles.</p></div>
-      <div class="item"><b>Modèle opérationnel cible</b><p>Les tâches, décisions, contrôles et flux d’information à supprimer, automatiser, consolider ou reconstruire.</p></div>
-      <div class="item"><b>Frontière humain / système</b><p>Ce qui exige encore expertise, responsabilité ou arbitrage humain — et ce qui n’en exige plus.</p></div>
-      <div class="item"><b>Valeur exposée</b><p>Les revenus et marges vulnérables à des architectures de production plus légères, plus rapides ou issues d’autres catégories d’acteurs.</p></div>
-      <div class="item"><b>Nouvelles poches de valeur</b><p>Les activités, offres et capacités désormais accessibles grâce à la baisse du coût de l’intelligence, de l’analyse et de l’exécution.</p></div>
-      <div class="item"><b>Trajectoire de transformation</b><p>Les changements à engager, leur ordre, leur logique économique et l’architecture nécessaire pour les rendre opérationnels.</p></div>
+      <div class="item"><b>Structure de coûts cible</b><p>Le coût de chaque fonction si elle était conçue aujourd’hui avec les architectures disponibles, plutôt qu’héritée de contraintes devenues obsolètes.</p></div>
+      <div class="item"><b>Modèle opérationnel cible</b><p>Les tâches, décisions, validations, flux d’information et couches organisationnelles à supprimer, consolider, automatiser ou reconstruire.</p></div>
+      <div class="item"><b>Valeur exposée</b><p>Les revenus, marges et intermédiaires vulnérables à une production plus rapide, plus légère ou portée par une autre catégorie d’acteur.</p></div>
+      <div class="item"><b>Frontière humain / système</b><p>Ce qui exige encore expertise, responsabilité, jugement ou relation humaine — et ce qui peut désormais être exécuté autrement.</p></div>
+      <div class="item"><b>Nouvelles poches de valeur</b><p>Les produits, services et positions dans la chaîne de valeur qui deviennent accessibles grâce aux capacités technologiques actuelles.</p></div>
+      <div class="item"><b>Coût du statu quo</b><p>L’écart économique entre votre organisation actuelle et l’architecture qu’un acteur construit aujourd’hui pourrait déployer contre elle.</p></div>
     </div>
   </div>
 </section>
@@ -94,14 +83,14 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px
 <section>
   <div class="container">
     <div class="head">
-      <h2>Nous ne vous comparons pas seulement à vos concurrents actuels.</h2>
-      <p>Nous comparons votre entreprise à toute architecture capable de produire la même valeur pour le client : nouvel entrant, plateforme, logiciel devenu opérateur, acteur financier, entreprise internationale ou organisation construite avec une structure de coûts entièrement différente.</p>
+      <h2>Une reconstruction complète, pas une succession de cas d’usage.</h2>
+      <p>Nous ne partons ni de votre organigramme, ni de votre stack, ni d’une liste d’outils. Nous partons de la valeur produite et reconstruisons l’entreprise nécessaire pour la capter dans les conditions technologiques actuelles.</p>
     </div>
     <div class="steps">
-      <div class="step"><div><h3>Décomposer la valeur et le modèle actuel.</h3><p>Produits, fonctions, processus, décisions, systèmes, ressources, coûts et dépendances sont reliés à la valeur réellement délivrée.</p></div></div>
-      <div class="step"><div><h3>Construire le modèle opératoire cible.</h3><p>Nous redessinons l’entreprise à partir des capacités technologiques disponibles aujourd’hui, sans préserver artificiellement l’organisation existante.</p></div></div>
-      <div class="step"><div><h3>Quantifier l’écart.</h3><p>Coût actuel, coût cible, valeur exposée, nouvelles capacités, investissements nécessaires et impact économique de la transition.</p></div></div>
-      <div class="step"><div><h3>Passer de la décision à l’exécution.</h3><p>Lorsque la transformation est retenue, EXIOR peut concevoir, intégrer et déployer les systèmes nécessaires jusqu’à leur mise en production.</p></div></div>
+      <div class="step"><div><h3>Décomposer la valeur et l’économie actuelle.</h3><p>Produits, fonctions, processus, décisions, systèmes, ressources, coûts, contraintes et dépendances sont reliés à la valeur réellement délivrée au client.</p></div></div>
+      <div class="step"><div><h3>Reconstruire l’entreprise cible.</h3><p>Nous déterminons la meilleure architecture possible pour produire et capter cette valeur aujourd’hui — y compris lorsqu’elle sort des frontières historiques de votre secteur.</p></div></div>
+      <div class="step"><div><h3>Quantifier l’écart stratégique.</h3><p>Coût actuel, coût cible, capacité supplémentaire, valeur exposée, nouvelles marges accessibles, investissement requis et impact du délai de transformation.</p></div></div>
+      <div class="step"><div><h3>Transformer la conclusion en système opérationnel.</h3><p>EXIOR peut ensuite concevoir, assembler, intégrer et déployer l’architecture retenue jusqu’à sa mise en production.</p></div></div>
     </div>
   </div>
 </section>
@@ -110,14 +99,13 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px
   <div class="container">
     <div class="offer">
       <div>
-        <div class="kicker">EXIOR TRUTH</div>
-        <h2>La vérité technologique et économique sur votre entreprise.</h2>
-        <p>Une analyse structurée de votre modèle actuel, de l’organisation qui peut désormais produire la même valeur avec de meilleures caractéristiques économiques, des activités à reconstruire, des nouvelles valeurs à capter et de la trajectoire d’implémentation correspondante.</p>
+        <div class="kicker">Executive Technology Reconstruction</div>
+        <h2>Le benchmark qui manque au comité exécutif.</h2>
+        <p>Vous obtenez une reconstruction de l’entreprise qui pourrait être conçue aujourd’hui pour capter votre valeur : son modèle économique, son organisation, sa structure de coûts, ses capacités technologiques, les écarts avec votre modèle actuel et les transformations prioritaires à engager.</p>
       </div>
-      <div class="price">
-        <div class="amount">1 490 €</div>
-        <div class="tax">HT — point d’entrée</div>
-        <a class="btn" href="https://exior.io">Lancer l’analyse</a>
+      <div class="offer-side">
+        <div class="label">Analyse asynchrone. Données confidentielles. Restitution structurée et exploitable.</div>
+        <a class="btn" href="https://exior.io">Démarrer l’évaluation</a>
       </div>
     </div>
   </div>
@@ -126,7 +114,7 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:#777;font-size:13px
 <section class="final">
   <div class="container">
     <h2>La redistribution de valeur a déjà commencé.</h2>
-    <p>EXIOR vous montre exactement quelle part de votre modèle économique est exposée, par quoi elle peut être remplacée, combien coûte l’alternative et ce qu’il faut construire maintenant.</p>
+    <p>EXIOR vous montre où elle se produit dans votre entreprise, quelle structure peut la capter à votre place et quelle organisation vous devez construire pour la reprendre.</p>
     <a class="btn" href="https://exior.io">Évaluer mon entreprise</a>
   </div>
 </section>
