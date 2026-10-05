@@ -103,6 +103,13 @@ section{padding:96px 0;border-top:1px solid var(--line)}
 .final{text-align:center;padding:112px 0}
 .final h2{font-size:clamp(42px,6vw,72px);line-height:1;max-width:15ch;margin:auto}
 .final p{color:var(--muted);font-size:18px;max-width:56ch;margin:22px auto 30px}
+.infra{display:grid;grid-template-columns:.8fr 1.2fr;gap:46px;align-items:start}
+.infra-intro h2{font-size:clamp(38px,5vw,60px);line-height:1.02;max-width:12ch}
+.infra-intro p{color:var(--muted);font-size:18px;max-width:42ch;margin:20px 0 0}
+.infra-list{border-top:1px solid var(--line2)}
+.infra-row{display:grid;grid-template-columns:170px 1fr;gap:24px;padding:22px 0;border-bottom:1px solid var(--line)}
+.infra-row b{font:600 16px/1.2 var(--display)}
+.infra-row p{margin:0;color:var(--muted);font-size:14px}
 footer{border-top:1px solid var(--line);padding:30px 0;color:#747a73;font-size:13px}
 .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 @media(max-width:900px){
@@ -111,6 +118,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#747a73;font-size:1
   .section-head{grid-template-columns:1fr;gap:12px}
   .outcomes{grid-template-columns:1fr}.outcome,.outcome+ .outcome{padding:24px 0;border-right:0;border-bottom:1px solid var(--line);min-height:auto}
   .standards{grid-template-columns:repeat(2,1fr)}
+  .infra{grid-template-columns:1fr}
   .method-row{grid-template-columns:70px 1fr}.method-row p{grid-column:2}
   .offer-side{border-left:0;border-top:1px solid var(--line);padding:24px 0 0}
 }
@@ -124,6 +132,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#747a73;font-size:1
   .artifact-cols{grid-template-columns:1fr}
   .artifact-cell{border-right:0}
   .standards,.execution{grid-template-columns:1fr}
+  .infra-row{grid-template-columns:1fr;gap:7px}
   .method-row{grid-template-columns:48px 1fr;gap:18px}
   .offer{padding:28px}
 }
@@ -235,6 +244,23 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#747a73;font-size:1
   </div>
 </section>
 
+
+<section>
+  <div class="container infra">
+    <div class="infra-intro">
+      <div class="eyebrow">Infrastructure EXIOR</div>
+      <h2>La méthode repose sur un système, pas sur une présentation.</h2>
+      <p>EXIOR relie le contexte réel de l’entreprise, les preuves disponibles, la recherche technique et l’exécution dans un même environnement de travail.</p>
+    </div>
+    <div class="infra-list">
+      <div class="infra-row"><b>Company model</b><p>Finance, ventes, opérations, technologie, contraintes et décisions sont reliées dans un contexte d’entreprise persistant.</p></div>
+      <div class="infra-row"><b>Evidence graph</b><p>Les faits, leurs sources, leur niveau de confiance et les hypothèses restent attachés aux conclusions.</p></div>
+      <div class="infra-row"><b>Research & analysis</b><p>Web, fichiers, modèles et code peuvent être mobilisés contre le même contexte pour vérifier les capacités et chiffrer les alternatives.</p></div>
+      <div class="infra-row"><b>Execution layer</b><p>Les recommandations retenues peuvent passer vers des logiciels, intégrations, automatisations et agents opérant dans les permissions accordées.</p></div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <div class="section-head">
@@ -284,7 +310,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#747a73;font-size:1
           <li>Organisation et architecture cible</li>
           <li>Priorités, dépendances et séquence</li>
         </ul>
-        <a class="btn" href="https://exior.io">Démarrer l’évaluation</a>
+        <a class="btn" href="https://exior.io/#advisor">Démarrer l’évaluation</a>
       </div>
     </div>
   </div>
@@ -294,7 +320,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#747a73;font-size:1
   <div class="container">
     <h2>La valeur ne disparaît pas. Elle change de propriétaire.</h2>
     <p>EXIOR montre où elle se déplace, quelle architecture peut la capter plus efficacement et ce que votre entreprise doit devenir pour la conserver ou l’étendre.</p>
-    <a class="btn" href="https://exior.io">Démarrer l’évaluation</a>
+    <a class="btn" href="https://exior.io/#advisor">Démarrer l’évaluation</a>
   </div>
 </section>
 </main>
@@ -302,7 +328,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#747a73;font-size:1
 <footer>
   <div class="container foot">
     <span>© 2026 EXIOR</span>
-    <span>Technology translated into enterprise economics.</span>
+    <span>Operate with evidence. Execute with control.</span>
   </div>
 </footer>
 </body>
