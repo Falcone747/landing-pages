@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>EXIOR — Transformation Blueprint</title>
+<meta name="description" content="EXIOR — Meta-System Technology. L'analyse qui confronte votre organisation à ce qui est désormais possible." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #F6F7F4;
+  --bg-2: #EDEEEA;
+  --ink: #151719;
+  --ink-2: #2a2c30;
+  --ivory: #F6F7F4;
+  --surface: #FFFFFF;
+  --line: rgba(21, 23, 25, 0.10);
+  --line-2: rgba(21, 23, 25, 0.18);
+  --accent: #5B47FF;
+  --accent-soft: rgba(91, 71, 255, 0.08);
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --ease: cubic-bezier(0.72, 0.21, 0.36, 1.01);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+body { overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+/* ============ NAVBAR ============ */
+.nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  height: 58px;
+  padding: 0 8px 0 20px;
+  background: rgba(246, 247, 244, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(21, 23, 25, 0.04);
+  width: min(960px, calc(100% - 40px));
+}
+.nav-logo { display: inline-flex; align-items: center; font-family: var(--font-display); font-weight: 600; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink); margin-right: auto; }
+.nav-logo svg { margin-right: 10px; }
+.nav-links { display: flex; gap: 28px; font-size: 13px; color: var(--muted); }
+.nav-links a { transition: color 0.2s; padding: 6px 4px; color: rgba(21,23,25,0.7); }
+.nav-links a:hover { color: var(--ink); }
+.nav-cta { display: inline-flex; align-items: center; height: 42px; padding: 0 18px; background: var(--ink); color: var(--ivory); border-radius: 4px; font-size: 13px; font-weight: 500; transition: background 0.2s, transform 0.2s; white-space: nowrap; }
+.nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
+@media (max-width: 800px) { .nav-links { display: none; } }
+
+/* ============ HERO ============ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: var(--bg);
+  overflow: hidden;
+}
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  animation: sceneReveal 0.8s var(--ease) 0.2s forwards;
+}
+@keyframes sceneReveal { to { opacity: 1; } }
+.hero-canvas-wrap { position: absolute; inset: 0; }
+.hero-canvas-wrap canvas { display: block; width: 100% !important; height: 100% !important; }
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: min(620px, 46vw);
+  margin-left: max(48px, 6vw);
+  padding: calc(64px + 80px) 0 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  pointer-events: none;
+}
+.hero-copy > * { pointer-events: auto; }
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  font-weight: 500;
+  width: fit-content;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: copyIn 0.7s var(--ease) 0.4s forwards;
+}
+.hero-eyebrow::before { content: ""; width: 24px; height: 1px; background: var(--ink); }
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(36px, 4.2vw, 56px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: copyIn 0.7s var(--ease) 0.5s forwards;
+}
+.hero-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(21, 23, 25, 0.72);
+  max-width: 44ch;
+  margin: 0;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: copyIn 0.7s var(--ease) 0.6s forwards;
+}
+@keyframes copyIn { to { opacity: 1; transform: none; } }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; opacity: 0; transform: translateY(8px); animation: copyIn 0.7s var(--ease) 0.7s forwards; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 22px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--ink); color: var(--ivory); }
+.btn-primary:hover { background: var(--accent); transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--line-2); }
+.btn-ghost:hover { border-color: var(--ink); transform: translateY(-1px); }
+.hero-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-top: 8px;
+  opacity: 0;
+  animation: copyIn 0.7s var(--ease) 0.9s forwards;
+}
+@media (max-width: 900px) {
+  .hero-copy { max-width: 100%; margin: 0 24px; padding-top: calc(80px + 60px); }
+}
+
+/* ============ SCENE ANNOTATIONS (small editorial labels) ============ */
+.scene-annotations {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.scene-anno {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: annoIn 0.6s var(--ease) 1.2s forwards;
+}
+@keyframes annoIn { to { opacity: 1; } }
+.scene-anno::before { content: ""; width: 4px; height: 1px; background: var(--ink); opacity: 0.4; }
+.scene-anno--1 { top: 18%; right: 10%; }
+.scene-anno--2 { top: 38%; right: 6%; }
+.scene-anno--3 { top: 58%; right: 8%; }
+.scene-anno--4 { top: 78%; right: 12%; }
+.scene-anno--core { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+@media (max-width: 900px) { .scene-annotations { display: none; } }
+
+/* ============ SCRUBBER ============ */
+.scrubber-wrap {
+  position: relative;
+  z-index: 3;
+  max-width: 620px;
+  margin: 0 auto 0 max(48px, 6vw);
+  padding: 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.scrubber-labels {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.scrubber-labels .active { color: var(--ink); font-weight: 500; }
+.scrubber-track {
+  position: relative;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+.scrubber-track::before {
+  content: "";
+  position: absolute;
+  inset: 11px 0;
+  height: 2px;
+  background: var(--line-2);
+}
+.scrubber-fill {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 2px;
+  background: var(--ink);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.scrubber-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 24px;
+  background: transparent;
+  outline: none;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  cursor: grab;
+}
+.scrubber-input:active { cursor: grabbing; }
+.scrubber-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--ink);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--ivory);
+  box-shadow: 0 2px 6px rgba(21, 23, 25, 0.15);
+  transition: transform 0.2s;
+}
+.scrubber-input::-webkit-slider-thumb:hover { transform: scale(1.15); }
+.scrubber-input::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: var(--ink);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--ivory);
+  box-shadow: 0 2px 6px rgba(21, 23, 25, 0.15);
+}
+@media (max-width: 900px) {
+  .scrubber-wrap { margin: 0 24px; max-width: 100%; }
+  .scrubber-labels .label--desktop { display: none; }
+  .scrubber-wrap .toggle-mobile { display: flex; gap: 8px; margin-top: 8px; }
+}
+@media (min-width: 901px) {
+  .scrubber-wrap .toggle-mobile { display: none; }
+}
+
+/* ============ NEXT SECTION PREVIEW ============ */
+.next-preview {
+  position: relative;
+  z-index: 2;
+  background: var(--bg-2);
+  padding: 80px 0 60px;
+  border-top: 1px solid var(--line);
+}
+.next-preview-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.next-preview .eyebrow-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.next-preview .eyebrow-next::before { content: ""; width: 24px; height: 1px; background: var(--ink); }
+.next-preview h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  max-width: 22ch;
+  margin: 0;
+}
+</style>
+
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "three": "https://esm.sh/three@0.169.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@8.17.10?external=react,react-dom,three",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@9.114.0?external=react,three,@react-three/fiber",
+    "@react-three/postprocessing": "https://esm.sh/@react-three/postprocessing@2.16.3?external=react,three,@react-three/fiber,postprocessing",
+    "postprocessing": "https://esm.sh/postprocessing@6.36.0?external=three"
+  }
+}
+</script>
+<script src="https://unpkg.com/@babel/standalone@7.25.6/babel.min.js"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" data-type="module" data-presets="env,react">
+import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Canvas, useFrame, useThree } from '@react-three/fiber';
+import { Environment, ContactShadows, Instances, Instance } from '@react-three/drei';
+import { EffectComposer, Bloom, SMAA, Vignette, ToneMapping } from '@react-three/postprocessing';
+import { ToneMappingMode } from 'three';
+
+const lerp = (a, b, t) => a + (b - a) * t;
+const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+/* ===== Layer data ===== */
+const LAYERS = [
+  { id: 'INTERNAL',     y:  1.8, r0: 2.4, r1: 2.0, n: 5, off: 0.0 },
+  { id: 'EXTERNAL',     y:  0.6, r0: 2.0, r1: 1.7, n: 5, off: 0.4 },
+  { id: 'TECHNOLOGY',   y: -0.6, r0: 1.6, r1: 1.4, n: 5, off: 0.8 },
+  { id: 'OBJECTIVES',   y: -1.8, r0: 1.2, r1: 1.1, n: 5, off: 1.2 },
+];
+
+/* Filaments: pairs of layer indices */
+const FILAMENTS = [
+  [0, 1], [1, 2], [2, 3],     // vertical
+  [0, 2], [1, 3],             // diagonal
+  [0, 3],                     // extreme
+];
+const VIOLET_FILAMENT = [2, 3]; // a signal that only exists at target
+
+function nodePositions(y, radius, count, phaseOffset) {
+  const positions = [];
+  for (let i = 0; i < count; i++) {
+    const angle = (i / count) * Math.PI * 2 + phaseOffset;
+    positions.push([Math.cos(angle) * radius, y, Math.sin(angle) * radius * 0.6]);
+  }
+  return positions;
+}
+
+/* ===== 3D Scene ===== */
+function MetaSystemScene({ scrubRef }) {
+  const group = useRef();
+  const layersRef = useRef([]);
+  const nodesRef = useRef([]);
+  const filamentsRef = useRef([]);
+  const centerRef = useRef();
+  const { camera, mouse } = useThree();
+  const startTime = useRef(performance.now());
+  const lastMouse = useRef([0, 0]);
+
+  // Animation progress (0-1) for entrance
+  const entrance = useRef(0);
+
+  useFrame(({ clock }) => {
+    const now = performance.now();
+    const elapsed = (now - startTime.current) / 1000;
+    const scrub = scrubRef.current;
+
+    // Entrance animation (0-2.5s)
+    if (entrance.current < 1) {
+      entrance.current = Math.min(1, entrance.current + 0.012);
+    }
+    const e = entrance.current;
+
+    // Camera parallax
+    const targetX = mouse.x * 0.4;
+    const targetY = -mouse.y * 0.3;
+    camera.position.x += (targetX - camera.position.x) * 0.04;
+    camera.position.y += (targetY - camera.position.y) * 0.04;
+    camera.lookAt(0, 0, 0);
+
+    // Group idle: subtle drift
+    if (group.current) {
+      const t = clock.getElapsedTime();
+      group.current.rotation.y = Math.sin(t * 0.08) * 0.008;
+      group.current.position.y = Math.sin(t * 0.3) * 0.015;
+    }
+
+    // Layer separation (entrance 0.3-1.0s)
+    if (group.current) {
+      const layerSep = clamp((e - 0.15) / 0.5, 0, 1);
+      const groupScale = 0.92 + layerSep * 0.08;
+      group.current.scale.setScalar(groupScale);
+    }
+
+    // Layers: scale + violet accent at target
+    layersRef.current.forEach((mesh, i) => {
+      if (!mesh) return;
+      const cfg = LAYERS[i];
+      const r = lerp(cfg.r0, cfg.r1, scrub);
+      mesh.scale.set(r, r, r);
+      // Material: target nodes get subtle violet tint
+      if (mesh.material) {
+        const isTarget = scrub > 0.4;
+        mesh.material.opacity = 0.85;
+      }
+    });
+
+    // Nodes: appear (entrance 0.7-1.4s) + scale on scrub
+    nodesRef.current.forEach((mesh, i) => {
+      if (!mesh) return;
+      const appear = clamp((e - 0.5 - i * 0.01) / 0.3, 0, 1);
+      const scrubEffect = 0.85 + scrub * 0.15;
+      mesh.scale.setScalar(appear * scrubEffect);
+    });
+
+    // Filaments: draw (entrance 1.0-1.8s)
+    filamentsRef.current.forEach((mesh, i) => {
+      if (!mesh) return;
+      const isViolet = VIOLET_FILAMENT[0] === FILAMENTS[i][0] && VIOLET_FILAMENT[1] === FILAMENTS[i][1];
+      const appear = clamp((e - 0.7 - i * 0.05) / 0.4, 0, 1);
+      mesh.scale.y = appear;
+      // Violet filament only at target
+      if (mesh.material) {
+        if (isViolet) {
+          mesh.material.opacity = appear * scrub;
+          mesh.material.color.setRGB(0.357, 0.278, 1.0); // violet
+        } else {
+          mesh.material.opacity = appear * 0.35 * (1 - scrub * 0.3);
+          mesh.material.color.setRGB(0.082, 0.090, 0.098); // graphite
+        }
+      }
+    });
+
+    // Center structure: slow rotation, scale on entrance
+    if (centerRef.current) {
+      const ct = clock.getElapsedTime();
+      centerRef.current.rotation.y = ct * 0.15;
+      centerRef.current.rotation.x = Math.sin(ct * 0.2) * 0.05;
+      const cAppear = clamp((e - 0.2) / 0.6, 0, 1);
+      centerRef.current.scale.setScalar(cAppear);
+    }
+  });
+
+  // Layer meshes
+  const layerMeshes = useMemo(() => LAYERS.map((cfg, i) => (
+    <mesh
+      key={'layer-' + i}
+      ref={(el) => (layersRef.current[i] = el)}
+      position={[0, cfg.y, 0]}
+      rotation={[Math.PI / 2, 0, 0]}
+    >
+      <torusGeometry args={[1, 0.012, 16, 64]} />
+      <meshPhysicalMaterial
+        color="#151719"
+        roughness={0.32}
+        metalness={0}
+        clearcoat={0.5}
+        clearcoatRoughness={0.25}
+        transparent
+        opacity={0.85}
+      />
+    </mesh>
+  )), []);
+
+  // Node positions per layer
+  const allNodes = useMemo(() => {
+    const arr = [];
+    LAYERS.forEach((cfg, i) => {
+      const positions = nodePositions(cfg.y, cfg.r0, cfg.n, cfg.off);
+      positions.forEach((pos, j) => {
+        arr.push({ id: `n-${i}-${j}`, pos, layer: i, index: j });
+      });
+    });
+    return arr;
+  }, []);
+
+  // Determine violet node (one node on TECHNOLOGY layer at target)
+  const isVioletNode = (layer, index) => layer === 2 && index === 0;
+
+  return (
+    <group ref={group}>
+      <ambientLight intensity={0.4} />
+      <directionalLight position={[5, 6, 4]} intensity={0.7} castShadow />
+      <directionalLight position={[-3, 2, -2]} intensity={0.2} />
+
+      {/* 4 layers */}
+      {layerMeshes}
+
+      {/* Nodes */}
+      {allNodes.map((n, i) => {
+        const isViolet = isVioletNode(n.layer, n.index);
+        return (
+          <mesh
+            key={n.id}
+            ref={(el) => (nodesRef.current[i] = el)}
+            position={n.pos}
+          >
+            <sphereGeometry args={[0.04, 16, 16]} />
+            <meshPhysicalMaterial
+              color={isViolet ? '#5B47FF' : '#FAFAFA'}
+              roughness={0.35}
+              metalness={0}
+              clearcoat={isViolet ? 0.8 : 0.4}
+              emissive={isViolet ? '#5B47FF' : '#000000'}
+              emissiveIntensity={isViolet ? 1.8 : 0}
+            />
+          </mesh>
+        );
+      })}
+
+      {/* Filaments */}
+      {FILAMENTS.map(([a, b], i) => {
+        const la = LAYERS[a];
+        const lb = LAYERS[b];
+        const yMid = (la.y + lb.y) / 2;
+        const rMid = (la.r0 + lb.r0) / 2;
+        const height = Math.abs(la.y - lb.y) + 0.4;
+        return (
+          <mesh
+            key={'fil-' + i}
+            ref={(el) => (filamentsRef.current[i] = el)}
+            position={[0, yMid, 0]}
+            scale={[1, 0, 1]}
+          >
+            <cylinderGeometry args={[0.005, 0.005, height, 8]} />
+            <meshBasicMaterial color="#151719" transparent opacity={0} />
+          </mesh>
+        );
+      })}
+
+      {/* Center: articulated structure (3-4 nested volumes) */}
+      <group ref={centerRef} scale={0}>
+        <mesh>
+          <boxGeometry args={[0.35, 0.35, 0.35]} />
+          <meshPhysicalMaterial color="#151719" roughness={0.28} metalness={0.1} clearcoat={0.6} clearcoatRoughness={0.2} />
+        </mesh>
+        <mesh rotation={[Math.PI / 4, 0, Math.PI / 4]}>
+          <boxGeometry args={[0.22, 0.22, 0.22]} />
+          <meshPhysicalMaterial color="#FAFAFA" roughness={0.35} metalness={0} clearcoat={0.5} />
+        </mesh>
+        <mesh rotation={[0, Math.PI / 4, Math.PI / 4]}>
+          <boxGeometry args={[0.12, 0.12, 0.12]} />
+          <meshPhysicalMaterial color="#5B47FF" roughness={0.3} emissive="#5B47FF" emissiveIntensity={1.5} />
+        </mesh>
+      </group>
+
+      <ContactShadows
+        position={[0, -2.8, 0]}
+        opacity={0.35}
+        scale={8}
+        blur={2.5}
+        far={4}
+        resolution={512}
+      />
+    </group>
+  );
+}
+
+/* ===== Scene wrapper ===== */
+function Scene({ scrubRef }) {
+  return (
+    <Canvas
+      camera={{ position: [0, 0, 6], fov: 45 }}
+      dpr={[1, 2]}
+      shadows
+      gl={{ antialias: true, alpha: true, powerPreference: 'high-performance' }}
+    >
+      <color attach="background" args={['#F6F7F4']} />
+      <fog attach="fog" args={['#F6F7F4', 5, 12]} />
+      <Environment preset="studio" environmentIntensity={0.8} />
+      <MetaSystemScene scrubRef={scrubRef} />
+      <EffectComposer multisampling={4}>
+        <SMAA />
+        <Bloom
+          intensity={0.5}
+          luminanceThreshold={0.82}
+          luminanceSmoothing={0.3}
+          mipmapBlur
+        />
+        <Vignette eskil={false} offset={0.3} darkness={0.35} />
+        <ToneMapping mode={ToneMappingMode.ACESFilmicToneMapping} />
+      </EffectComposer>
+    </Canvas>
+  );
+}
+
+/* ===== Navbar ===== */
+function Navbar() {
+  return (
+    <nav className="nav">
+      <a href="#" className="nav-logo">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <rect x="6" y="6" width="12" height="12" transform="rotate(45 12 12)" />
+        </svg>
+        EXIOR
+      </a>
+      <div className="nav-links">
+        <a href="#blueprint">Transformation Blueprint</a>
+        <a href="#how">How it works</a>
+        <a href="#about">About</a>
+        <a href="#trust">Trust</a>
+      </div>
+      <a href="#commander" className="nav-cta">Obtenir mon Blueprint</a>
+    </nav>
+  );
+}
+
+/* ===== Scrubber ===== */
+function Scrubber({ scrub, setScrub }) {
+  return (
+    <div className="scrubber-wrap">
+      <div className="scrubber-labels">
+        <span className={'label--desktop' + (scrub < 0.5 ? ' active' : '')}>Current</span>
+        <span className={'label--desktop' + (scrub >= 0.5 ? ' active' : '')}>Target</span>
+      </div>
+      <div className="scrubber-track">
+        <div className="scrubber-fill" style={{ width: `${scrub * 100}%` }} />
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={Math.round(scrub * 100)}
+          onChange={(e) => setScrub(parseInt(e.target.value) / 100)}
+          className="scrubber-input"
+          aria-label="Current to Target scrubber"
+        />
+      </div>
+      <div className="toggle-mobile">
+        <button onClick={() => setScrub(0)} className={'btn ' + (scrub < 0.5 ? 'btn-primary' : 'btn-ghost')} style={{ height: '36px', fontSize: '12px' }}>Current</button>
+        <button onClick={() => setScrub(1)} className={'btn ' + (scrub >= 0.5 ? 'btn-primary' : 'btn-ghost')} style={{ height: '36px', fontSize: '12px' }}>Target</button>
+      </div>
+    </div>
+  );
+}
+
+/* ===== App ===== */
+function App() {
+  const [scrub, setScrub] = useState(0);
+  const scrubRef = useRef(0);
+  useEffect(() => { scrubRef.current = scrub; }, [scrub]);
+
+  return (
+    <>
+      <Navbar />
+      <section className="hero">
+        <div className="hero-canvas-wrap">
+          <Scene scrubRef={scrubRef} />
+        </div>
+
+        <div className="scene-annotations">
+          <div className="scene-anno scene-anno--1">INTERNAL</div>
+          <div className="scene-anno scene-anno--2">EXTERNAL</div>
+          <div className="scene-anno scene-anno--3">TECHNOLOGY</div>
+          <div className="scene-anno scene-anno--4">OBJECTIVES</div>
+          <div className="scene-anno scene-anno--core">META-SYSTEM</div>
+        </div>
+
+        <div className="hero-copy">
+          <span className="hero-eyebrow">EXIOR Transformation Blueprint</span>
+          <h1>Le plan directeur de l'entreprise<br/>que vous devez construire maintenant.</h1>
+          <p className="hero-body">L'analyse qui confronte votre organisation à tout ce qui est désormais possible — et produit l'architecture cible.</p>
+          <div className="hero-cta">
+            <a href="#commander" className="btn btn-primary">Obtenir mon Blueprint</a>
+            <a href="#exemple" className="btn btn-ghost">Voir un exemple</a>
+          </div>
+          <span className="hero-sub">Architecture cible · Impact économique · Plan de transformation</span>
+          <Scrubber scrub={scrub} setScrub={setScrub} />
+        </div>
+      </section>
+
+      <section className="next-preview">
+        <div className="next-preview-inner">
+          <span className="eyebrow-next">Pourquoi maintenant</span>
+          <h2>L'entreprise optimale change <em style={{ fontStyle: 'italic' }}>plus vite</em> que l'organisation réelle.</h2>
+        </div>
+      </section>
+    </>
+  );
+}
+
+createRoot(document.getElementById('root')).render(<App />);
+</script>
+</body>
+</html>
