@@ -28,82 +28,161 @@
 <main id="main">
 
 <!-- ============================================================
-     10.2 HERO — produit = hero
+     HERO V2 — System diagram, not card grid
      ============================================================ -->
-<header class="hero" style="padding: 80px 0 60px;">
+<header class="hero">
   <div class="container">
-    <div style="text-align: center; max-width: 820px; margin: 0 auto 56px;" class="reveal">
-      <span class="hero-eyebrow">EXIOR Transformation Blueprint</span>
-      <h1 style="margin: 24px auto 20px; max-width: 18ch;">Le plan directeur de l'entreprise que vous devez construire maintenant.</h1>
-      <p class="lede" style="margin: 0 auto; color: var(--muted-2);">EXIOR confronte votre organisation à tout ce qui est désormais possible et conçoit son architecture cible, son impact économique et le plan pour y parvenir.</p>
-      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 32px;">
-        <a href="mailto:contact@exior.io?subject=Demande%20de%20Transformation%20Blueprint" class="btn btn-primary btn-lg">Obtenir mon Transformation Blueprint</a>
-        <a href="#blueprint-preview" class="btn btn-secondary btn-lg">Voir ce que contient le Blueprint</a>
-      </div>
-      <ul class="kicker-list" style="justify-content: center; margin-top: 28px;">
-        <li>Architecture cible</li>
-        <li>Impact économique</li>
-        <li>Plan de transformation</li>
-      </ul>
-    </div>
-
-    <!-- HERO VISUAL — Current → EXIOR → Target -->
-    <div class="hero-diagram reveal" aria-label="Diagramme : Current Enterprise vers EXIOR Meta-System vers Target Enterprise">
-      <div class="hd-col hd-current">
-        <div class="hd-col-label">
-          <span class="data-tag data-tag--ink">Current Enterprise</span>
+    <div class="hero-grid">
+      <div class="hero-copy reveal">
+        <span class="section-label">EXIOR Transformation Blueprint</span>
+        <h1>Le plan directeur<br/>de l'entreprise que vous<br/>devez construire maintenant.</h1>
+        <p class="lede">EXIOR prend votre entreprise comme un système, la confronte à ce qui est désormais possible, et produit l'architecture cible — avec son impact et son plan.</p>
+        <div class="hero-cta">
+          <a href="mailto:contact@exior.io?subject=Demande%20de%20Transformation%20Blueprint" class="btn btn-primary btn-lg">Obtenir mon Blueprint</a>
+          <a href="#blueprint-preview" class="btn btn-secondary btn-lg">Voir un exemple</a>
         </div>
-        <ul class="hd-items">
-          <li><span class="hd-bullet"></span>Functions</li>
-          <li><span class="hd-bullet"></span>People</li>
-          <li><span class="hd-bullet"></span>Processes</li>
-          <li><span class="hd-bullet"></span>Systems</li>
-          <li><span class="hd-bullet"></span>Costs</li>
-          <li><span class="hd-bullet"></span>Data</li>
+        <ul class="hero-kickers">
+          <li>Architecture cible</li>
+          <li>Impact économique</li>
+          <li>Plan de transformation</li>
         </ul>
-        <div class="hd-status"><span class="status-tag status-hypothesis">STRUCTURED AROUND HISTORICAL CONSTRAINTS</span></div>
       </div>
 
-      <div class="hd-center">
-        <div class="hd-flows">
-          <div class="hd-flow"><span class="data-tag data-tag--accent">INTERNAL</span></div>
-          <div class="hd-flow"><span class="data-tag data-tag--accent">EXTERNAL</span></div>
-          <div class="hd-flow"><span class="data-tag data-tag--accent">TECHNOLOGY</span></div>
-          <div class="hd-flow"><span class="data-tag data-tag--accent">OBJECTIVES</span></div>
-        </div>
-        <div class="hd-system node node--center">
-          <span class="node-label">EXIOR</span>
-          <span class="node-name">META-SYSTEM</span>
-        </div>
-        <ul class="hd-verbs">
-          <li><span class="hd-verb">Model</span></li>
-          <li><span class="hd-verb">Connect</span></li>
-          <li><span class="hd-verb">Compare</span></li>
-          <li><span class="hd-verb">Design</span></li>
-        </ul>
-        <div class="hd-line hd-line-out" aria-hidden="true"></div>
-      </div>
+      <div class="hero-system reveal">
+        <div class="system-frame">
+          <div class="system-meta">
+            <span class="system-tag">CURRENT ENTERPRISE</span>
+            <span class="system-tag system-tag--accent">EXTERNAL SIGNALS</span>
+            <span class="system-tag">→ TARGET</span>
+          </div>
 
-      <div class="hd-col hd-target">
-        <div class="hd-col-label">
-          <span class="data-tag data-tag--accent">Target Enterprise</span>
+          <svg viewBox="0 0 720 500" xmlns="http://www.w3.org/2000/svg" class="system-svg" role="img" aria-label="Modèle d'entreprise : Current Enterprise avec relations et variables, signaux externes, EXIOR Meta-System au centre, Target Architecture émergeant">
+            <!-- Edges (drawn first, behind nodes) -->
+            <g class="edges">
+              <line class="edge" x1="120" y1="58" x2="265" y2="110" />
+              <line class="edge" x1="310" y1="128" x2="445" y2="58" />
+              <line class="edge" x1="445" y1="200" x2="310" y2="146" />
+              <line class="edge" x1="300" y1="300" x2="445" y2="236" />
+              <line class="edge" x1="120" y1="200" x2="265" y2="146" />
+              <line class="edge" x1="120" y1="300" x2="265" y2="146" />
+              <!-- External → system (subtle) -->
+              <line class="edge edge--external" x1="580" y1="63" x2="490" y2="200" />
+              <line class="edge edge--external" x1="580" y1="143" x2="120" y2="58" />
+              <line class="edge edge--external" x1="580" y1="183" x2="120" y2="200" />
+            </g>
+
+            <!-- Variable labels (on edges) -->
+            <g class="var-labels">
+              <g class="var-label" transform="translate(162, 76)">
+                <rect width="60" height="16" rx="2" />
+                <text x="30" y="12" text-anchor="middle">HANDOFF</text>
+              </g>
+              <g class="var-label" transform="translate(347, 120)">
+                <rect width="60" height="16" rx="2" />
+                <text x="30" y="12" text-anchor="middle">HANDOFF</text>
+              </g>
+              <g class="var-label" transform="translate(337, 165)">
+                <rect width="80" height="16" rx="2" />
+                <text x="40" y="12" text-anchor="middle">DEPENDENCY</text>
+              </g>
+              <g class="var-label" transform="translate(352, 260)">
+                <rect width="40" height="16" rx="2" />
+                <text x="20" y="12" text-anchor="middle">DATA</text>
+              </g>
+              <g class="var-label" transform="translate(157, 165)">
+                <rect width="70" height="16" rx="2" />
+                <text x="35" y="12" text-anchor="middle">RESOURCE</text>
+              </g>
+              <g class="var-label" transform="translate(172, 215)">
+                <rect width="40" height="16" rx="2" />
+                <text x="20" y="12" text-anchor="middle">€ COST</text>
+              </g>
+            </g>
+
+            <!-- Internal function nodes -->
+            <g class="nodes">
+              <g class="node" transform="translate(40, 40)">
+                <rect width="80" height="36" rx="4" />
+                <text class="node-label" x="40" y="14" text-anchor="middle">FUNCTION</text>
+                <text class="node-name" x="40" y="28" text-anchor="middle">Sales</text>
+              </g>
+              <g class="node" transform="translate(220, 110)">
+                <rect width="90" height="36" rx="4" />
+                <text class="node-label" x="45" y="14" text-anchor="middle">FUNCTION</text>
+                <text class="node-name" x="45" y="28" text-anchor="middle">Operations</text>
+              </g>
+              <g class="node" transform="translate(400, 40)">
+                <rect width="90" height="36" rx="4" />
+                <text class="node-label" x="45" y="14" text-anchor="middle">FUNCTION</text>
+                <text class="node-name" x="45" y="28" text-anchor="middle">Customer Ops</text>
+              </g>
+              <g class="node" transform="translate(400, 200)">
+                <rect width="90" height="36" rx="4" />
+                <text class="node-label" x="45" y="14" text-anchor="middle">FUNCTION</text>
+                <text class="node-name" x="45" y="28" text-anchor="middle">Technology</text>
+              </g>
+              <g class="node" transform="translate(40, 200)">
+                <rect width="80" height="36" rx="4" />
+                <text class="node-label" x="40" y="14" text-anchor="middle">FUNCTION</text>
+                <text class="node-name" x="40" y="28" text-anchor="middle">People</text>
+              </g>
+              <g class="node" transform="translate(220, 300)">
+                <rect width="80" height="36" rx="4" />
+                <text class="node-label" x="40" y="14" text-anchor="middle">FUNCTION</text>
+                <text class="node-name" x="40" y="28" text-anchor="middle">Data</text>
+              </g>
+              <g class="node" transform="translate(40, 300)">
+                <rect width="80" height="36" rx="4" />
+                <text class="node-label" x="40" y="14" text-anchor="middle">FUNCTION</text>
+                <text class="node-name" x="40" y="28" text-anchor="middle">Finance</text>
+              </g>
+            </g>
+
+            <!-- External signal nodes -->
+            <g class="nodes-external">
+              <g class="node node--external" transform="translate(580, 50)">
+                <rect width="60" height="26" rx="3" />
+                <text class="node-name" x="30" y="17" text-anchor="middle">AI</text>
+              </g>
+              <g class="node node--external" transform="translate(580, 90)">
+                <rect width="60" height="26" rx="3" />
+                <text class="node-name" x="30" y="17" text-anchor="middle">Agents</text>
+              </g>
+              <g class="node node--external" transform="translate(580, 130)">
+                <rect width="60" height="26" rx="3" />
+                <text class="node-name" x="30" y="17" text-anchor="middle">Market</text>
+              </g>
+              <g class="node node--external" transform="translate(580, 170)">
+                <rect width="60" height="26" rx="3" />
+                <text class="node-name" x="30" y="17" text-anchor="middle">Competitors</text>
+              </g>
+            </g>
+
+            <!-- EXIOR META-SYSTEM (center, large, distinct) -->
+            <g class="node node--exior" transform="translate(240, 230)">
+              <rect width="200" height="60" rx="6" />
+              <text class="exior-label" x="100" y="22" text-anchor="middle">EXIOR</text>
+              <text class="exior-name" x="100" y="42" text-anchor="middle">META-SYSTEM</text>
+            </g>
+
+            <!-- TARGET ARCHITECTURE (faded, emerging) -->
+            <g class="node node--target" transform="translate(540, 320)">
+              <rect width="80" height="36" rx="4" />
+              <text class="node-label" x="40" y="14" text-anchor="middle">STATE</text>
+              <text class="node-name" x="40" y="28" text-anchor="middle">Target</text>
+            </g>
+
+            <!-- EXIOR → Target (subtle flow) -->
+            <line class="edge edge--to-target" x1="440" y1="280" x2="540" y2="338" />
+          </svg>
         </div>
-        <ul class="hd-items">
-          <li><span class="hd-bullet hd-bullet--accent"></span>Humans</li>
-          <li><span class="hd-bullet hd-bullet--accent"></span>Agents</li>
-          <li><span class="hd-bullet hd-bullet--accent"></span>Software</li>
-          <li><span class="hd-bullet hd-bullet--accent"></span>Data</li>
-          <li><span class="hd-bullet hd-bullet--accent"></span>Organization</li>
-          <li><span class="hd-bullet hd-bullet--accent"></span>Workflows</li>
-        </ul>
-        <div class="hd-status"><span class="status-tag status-derived">RECONCEIVED FROM CURRENT POSSIBLE</span></div>
       </div>
     </div>
   </div>
 </header>
 
 <!-- ============================================================
-     10.3 WHY NOW
+     WHY NOW
      ============================================================ -->
 <section id="why-now">
   <div class="container">
@@ -147,7 +226,7 @@
 </section>
 
 <!-- ============================================================
-     10.4 META-SYSTEM
+     META-SYSTEM
      ============================================================ -->
 <section id="meta-system" style="background: var(--bg-2);">
   <div class="container">
@@ -157,7 +236,6 @@
     </div>
 
     <div class="ms-diagram reveal">
-      <!-- Input streams (4 columns) -->
       <div class="ms-inputs">
         <div class="ms-input-col">
           <div class="ms-input-head"><span class="data-tag data-tag--accent">INTERNAL</span></div>
@@ -189,7 +267,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="3" x2="12" y2="21"/><polyline points="6 15 12 21 18 15"/></svg>
       </div>
 
-      <!-- EXIOR Core -->
       <div class="ms-core">
         <div class="ms-core-box">
           <div class="ms-core-label">EXIOR META-SYSTEM</div>
@@ -206,7 +283,6 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="3" x2="12" y2="21"/><polyline points="6 15 12 21 18 15"/></svg>
       </div>
 
-      <!-- Output -->
       <div class="ms-output">
         <div class="ms-output-head"><span class="section-label" style="margin: 0;">Target Architecture</span></div>
         <p style="font-size: 14px; color: var(--muted-2); max-width: 56ch;">Une tâche peut sembler optimale localement et être mauvaise pour le système entier.</p>
@@ -216,7 +292,7 @@
 </section>
 
 <!-- ============================================================
-     10.5 THREE LEVELS
+     THREE LEVELS
      ============================================================ -->
 <section id="three-levels">
   <div class="container">
@@ -249,7 +325,7 @@
 </section>
 
 <!-- ============================================================
-     10.6 WHAT YOU GET — 6 components
+     WHAT YOU GET
      ============================================================ -->
 <section id="what-you-get" style="background: var(--bg-2);">
   <div class="container">
@@ -324,7 +400,7 @@
 </section>
 
 <!-- ============================================================
-     10.7 BLUEPRINT PREVIEW
+     BLUEPRINT PREVIEW
      ============================================================ -->
 <section id="blueprint-preview">
   <div class="container">
@@ -406,7 +482,7 @@
 </section>
 
 <!-- ============================================================
-     10.8 TRANSFORMATION ACTIONS — 8 actions
+     TRANSFORMATION ACTIONS
      ============================================================ -->
 <section id="actions" style="background: var(--bg-2);">
   <div class="container">
@@ -453,7 +529,7 @@
 </section>
 
 <!-- ============================================================
-     10.9 VALUE REDISTRIBUTION
+     VALUE REDISTRIBUTION
      ============================================================ -->
 <section id="value">
   <div class="container">
@@ -497,7 +573,7 @@
 </section>
 
 <!-- ============================================================
-     10.10 WHAT EXIOR IS NOT
+     WHAT EXIOR IS NOT
      ============================================================ -->
 <section id="is-not" style="background: var(--fg-bright); color: #fff;">
   <div class="container">
@@ -535,7 +611,7 @@
 </section>
 
 <!-- ============================================================
-     10.11 EXECUTION
+     EXECUTION
      ============================================================ -->
 <section id="execution">
   <div class="container">
@@ -545,24 +621,19 @@
     </div>
 
     <div class="exec-flow reveal">
-      <div class="exec-step">
-        <div class="exec-label">Blueprint</div>
-        <p>Décision complète</p>
-      </div>
+      <div class="exec-step"><div class="exec-label">Blueprint</div><p>Décision complète</p></div>
       <div class="exec-arrow" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
       </div>
-      <div class="exec-step">
-        <div class="exec-label">Decision</div>
-        <p>Vous choisissez</p>
-      </div>
+      <div class="exec-step"><div class="exec-label">Decision</div><p>Vous choisissez</p></div>
       <div class="exec-arrow" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
       </div>
-      <div class="exec-step">
-        <div class="exec-label">Build</div>
-        <p>Implémentation</p>
+      <div class="exec-step"><div class="exec-label">Build</div><p>Implémentation</p></div>
+      <div class="exec-arrow" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></svg>
       </div>
+      <div class="exec-step exec-step--end"><div class="exec-label">Operating reality</div><p>Exploitation</p></div>
     </div>
 
     <div class="exec-bricks reveal">
@@ -583,7 +654,7 @@
 </section>
 
 <!-- ============================================================
-     10.12 FINAL CTA
+     FINAL CTA
      ============================================================ -->
 <section id="commander">
   <div class="container">
@@ -643,7 +714,21 @@
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // reveal
+  // SVG system diagram — reveal on scroll
+  const sysSvg = document.querySelector('.system-svg');
+  if (sysSvg) {
+    const sysObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          sysSvg.classList.add('is-visible');
+          sysObs.unobserve(sysSvg);
+        }
+      });
+    }, { threshold: 0.2 });
+    sysObs.observe(sysSvg);
+  }
+
+  // general reveal
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
@@ -654,43 +739,48 @@
 </html>
 
 <style>
-/* Page-specific styles (home) */
-.hero-diagram {
-  display: grid;
-  grid-template-columns: 1fr 200px 1fr;
-  gap: 0;
-  align-items: stretch;
-  border: 1px solid var(--line-2);
-  border-radius: var(--r-md);
-  background: var(--surface);
-  overflow: hidden;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-@media (max-width: 860px) {
-  .hero-diagram { grid-template-columns: 1fr; }
-}
-.hd-col { padding: 28px 24px; display: flex; flex-direction: column; gap: 16px; }
-.hd-current { background: var(--surface); }
-.hd-target { background: var(--surface-2); border-left: 1px solid var(--line); }
-@media (max-width: 860px) { .hd-target { border-left: 0; border-top: 1px solid var(--line); } }
-.hd-center { background: var(--fg-bright); color: #fff; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
-@media (max-width: 860px) { .hd-center { border-top: 1px solid var(--line); } }
-.hd-col-label { display: flex; }
-.hd-items { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; flex: 1; }
-.hd-items li { display: flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 13px; color: var(--fg-bright); }
-.hd-bullet { width: 6px; height: 6px; border-radius: 50%; background: var(--line-3); flex: none; }
-.hd-bullet--accent { background: var(--accent); }
-.hd-status { margin-top: auto; }
-.hd-flows { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; width: 100%; }
-.hd-flow { padding: 4px 8px; background: rgba(255,255,255,0.06); border-radius: 4px; text-align: center; }
-.hd-flow .data-tag { font-size: 9px; padding: 2px 6px; background: transparent; border-color: rgba(255,255,255,0.2); color: rgba(255,255,255,0.8); }
-.hd-system { text-align: center; padding: 16px 12px; min-width: 160px; }
-.hd-system .node-label { color: rgba(255,255,255,0.6); }
-.hd-system .node-name { color: #fff; font-size: 16px; letter-spacing: 0.08em; }
-.hd-verbs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; width: 100%; list-style: none; padding: 0; margin: 0; }
-.hd-verb { font-family: var(--font-mono); font-size: 10px; color: rgba(255,255,255,0.7); text-align: center; padding: 4px; background: rgba(255,255,255,0.04); border-radius: 4px; letter-spacing: 0.06em; }
-.hd-line-out { display: none; }
+/* ============================================================
+   HERO V2 — System diagram, not card grid
+   ============================================================ */
+.hero { padding: 56px 0 80px; }
+.hero-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 56px; align-items: center; min-height: 560px; }
+@media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; min-height: auto; } }
+.hero-copy { display: flex; flex-direction: column; gap: 24px; }
+.hero-copy h1 { font-size: clamp(36px, 4.4vw, 56px); letter-spacing: -0.035em; line-height: 1.04; }
+.hero-copy .lede { color: var(--muted-2); font-size: 17px; line-height: 1.6; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-kickers { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-direction: column; gap: 6px; }
+.hero-kickers li { font-family: var(--font-mono); font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px; }
+.hero-kickers li::before { content: ""; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+
+/* System diagram frame */
+.hero-system { position: relative; }
+.system-frame { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 20px; }
+.system-meta { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.system-tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 4px 10px; border: 1px solid var(--line); border-radius: var(--r-sm); }
+.system-tag--accent { color: var(--accent); border-color: var(--accent-line); background: var(--accent-soft); }
+
+/* SVG system */
+.system-svg { width: 100%; height: auto; display: block; }
+.system-svg .edge { stroke: var(--line-2); stroke-width: 1; fill: none; transition: stroke-dashoffset 1s var(--ease-out) 0.2s; stroke-dasharray: 300; stroke-dashoffset: 300; }
+.system-svg.is-visible .edge { stroke-dashoffset: 0; }
+.system-svg .edge--external { stroke: var(--line); stroke-dasharray: 4 3; opacity: 0.5; }
+.system-svg .edge--to-target { stroke: var(--accent); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.4; }
+.system-svg .node { opacity: 0; transform: translateY(4px); transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out); }
+.system-svg.is-visible .node { opacity: 1; transform: none; }
+.system-svg.is-visible .node--target { opacity: 0.4; }
+.system-svg .node rect { fill: var(--surface); stroke: var(--line-2); stroke-width: 1; transition: stroke 0.3s var(--ease-soft), fill 0.3s var(--ease-soft); }
+.system-svg .node:hover rect { stroke: var(--accent); fill: var(--accent-soft); }
+.system-svg .node .node-label { font-family: var(--font-mono); font-size: 8px; fill: var(--muted); letter-spacing: 0.08em; text-transform: uppercase; }
+.system-svg .node .node-name { font-family: var(--font-body); font-size: 12px; font-weight: 500; fill: var(--fg-bright); }
+.system-svg .node--external rect { fill: var(--surface-2); }
+.system-svg .node--external .node-name { font-size: 10px; }
+.system-svg .node--exior rect { fill: var(--fg-bright); stroke: var(--fg-bright); }
+.system-svg .node--exior .exior-label { font-family: var(--font-mono); font-size: 10px; fill: rgba(255,255,255,0.6); letter-spacing: 0.12em; text-transform: uppercase; }
+.system-svg .node--exior .exior-name { font-family: var(--font-display, "Space Grotesk", "Inter", sans-serif); font-size: 14px; font-weight: 700; fill: #fff; letter-spacing: 0.04em; }
+.system-svg .node--target rect { stroke-dasharray: 3 3; }
+.system-svg .var-label rect { fill: var(--surface-2); stroke: var(--line); }
+.system-svg .var-label text { font-family: var(--font-mono); font-size: 8px; fill: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* Why now */
 .why-grid { display: grid; grid-template-columns: 1fr 32px 1fr 32px 1fr; gap: 0; align-items: start; }
